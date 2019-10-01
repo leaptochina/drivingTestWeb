@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 
 class Question extends Controller
 {
@@ -21,5 +22,14 @@ class Question extends Controller
         ];
 
         return $r;
+    }
+
+    public function show($questionId)
+    {
+        $questionList =  \App\QuestionList::find($questionId);
+
+        $questionList -> load('questions', 'explains');
+
+        return $questionList;
     }
 }
