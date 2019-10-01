@@ -16,4 +16,6 @@ Route::get('/', function () {
 });
 
 
-Route::get('/mi', 'Migrate@show');
+Route::get('/q/all', 'Api\Question@all');
+
+Route::get('/mi', 'Api\Migrate@show');
