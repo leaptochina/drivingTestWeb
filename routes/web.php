@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/config', 'Api\Config@all');
+
+Route::get('/q/all', 'Api\Question@all');
+Route::get('/q/{questionId}', 'Api\Question@show');
+
+Route::get('/mi', 'Api\Migrate@show');
