@@ -17,6 +17,7 @@ class Users extends Seeder
             'name' => 'Admin',
             'password' => '0',
             'email' => 'pine@blueberrysolution.co.nz',
+            'icon' => 'bbs.png',
         ]);
     }
 }

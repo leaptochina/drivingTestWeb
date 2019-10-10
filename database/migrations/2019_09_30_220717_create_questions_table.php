@@ -17,7 +17,7 @@ class CreateQuestionsTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('language_id');
             $table->bigInteger('question_list_id');
-            $table->string('topic');
+            $table->string('topic', 2000);
             $table->string('a');
             $table->string('b');
             $table->string('c');
