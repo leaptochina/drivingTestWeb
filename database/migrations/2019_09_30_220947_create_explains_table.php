@@ -17,7 +17,8 @@ class CreateExplainsTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('user_id');
             $table->bigInteger('question_list_id');
-            $table->string('explain');
+            $table->string('explain_zh', 2000)->nullable();
+            $table->string('explain_en', 2000)->nullable();
             $table->bigInteger('like');
             $table->timestamps();
         });

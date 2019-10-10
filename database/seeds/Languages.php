@@ -16,10 +16,13 @@ class Languages extends Seeder
         DB::table('languages')->insert([
             'id' => '1',
             'name' => 'English',
+            'flag' => 'en',
         ]);
+        
         DB::table('languages')->insert([
             'id' => '2',
             'name' => '简体中文',
+            'flag' => 'zh',
         ]);
     }
 }

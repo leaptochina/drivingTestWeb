@@ -2,12 +2,56 @@
 
 namespace App\Http\Controllers\Api;
 
+
+use Google\Cloud\Translate\TranslateClient;
+
+
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 //数据库迁移 从老数据库迁出数据
 class Migrate extends Controller
 {
+    public function translate(){
+        putenv('GOOGLE_APPLICATION_CREDENTIALS=D:\Me\Web\drivingTest\google_key.json');
+       
+        $translate = new TranslateClient();
+
+
+        $explains = \App\Explain::all();
+
+        foreach ($explains as $explain) {
+            if ($explain->explain_en == null){
+                $result = $translate->translate($explain->explain_zh, [
+                    'target' => 'en',
+                ]);
+                $explain->explain_en = $result['text'];
+                $explain->save();
+
+                //print("Source language: $result[text]\n");
+                //return;
+            }else{
+
+            }
+            $explain->explain_en = str_replace("&#39;","`", $explain->explain_en);
+
+            echo "DB::table('explains')->insert([ <br>
+                'id' => '{$explain->id}', <br>
+                'user_id' => '{$explain->user_id}', <br>
+                'question_list_id' => '{$explain->question_list_id}', <br>
+                'explain_zh' => '{$explain->explain_zh}', <br>
+                'explain_en' => '{$explain->explain_en}', <br>
+                'like' => '{$explain->like}',<br>
+            ]);<br><br>"; 
+            
+        }
+
+       
+        
+
+
+    }
+
     public function show()
     {
         $topics = \App\Topic::all();
@@ -32,7 +76,7 @@ class Migrate extends Controller
                 'id' => '{$topic->id}', <br>
                 'user_id' => '1', <br>
                 'question_list_id' => '{$topic->id}', <br>
-                'explain' => '{$exp}', <br>
+                'explain_zh' => '{$exp}', <br>
                 'like' => '1',<br>
             ]);<br><br>"; 
 
