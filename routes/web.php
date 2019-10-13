@@ -20,6 +20,7 @@ Route::get('/config', 'Api\Config@all');
 
 Route::get('/q/all', 'Api\Question@all');
 Route::get('/q/{questionId}', 'Api\Question@show');
+Route::get('/u/{user_id}', 'Api\User@show');
 
 
 Route::get('/imgs/{filename}', function ($filename) {

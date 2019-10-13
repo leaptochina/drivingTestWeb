@@ -14,6 +14,7 @@ class Question extends Controller
         $questionLists = \App\QuestionList::all();
 
         $questionLists -> load('questions', 'explains');
+        
 
 
         $r = [
