@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 
+
 class User extends Controller
 {
     
@@ -22,5 +23,17 @@ class User extends Controller
 
 
         return $r; 
+    }
+    
+    public function error()
+    {
+       
+        return "error";
+    }
+
+    public function store(Request $request)
+    {
+        //$user_identity, $email, $phone, $icon, $name
+        return $request -> all();
     }
 }

@@ -15,12 +15,24 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::post('/u/', 'Api\User@store');
+
 
 Route::get('/config', 'Api\Config@all');
 
+Route::get('/q/configs', 'Api\Question@configs');
 Route::get('/q/all', 'Api\Question@all');
 Route::get('/q/{questionId}', 'Api\Question@show');
 Route::get('/u/{user_id}', 'Api\User@show');
+
+//Route::get('/u/', 'Api\User@error');
+
+
+
+
+
+
+
 
 
 Route::get('/imgs/{filename}', function ($filename) {
@@ -34,4 +46,6 @@ Route::get('/imgs/{filename}', function ($filename) {
 
 Route::get('/mi/show', 'Api\Migrate@show');
 Route::get('/mi/translate', 'Api\Migrate@translate');
+
+
 

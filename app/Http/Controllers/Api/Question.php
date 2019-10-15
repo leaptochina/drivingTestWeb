@@ -8,6 +8,14 @@ use Illuminate\Support\Facades\DB;
 
 class Question extends Controller
 {
+    public function configs(){
+        $r = [
+            'questionTotalCount' => \App\QuestionList::count(),
+            'languageList' => \App\Language::all(),
+        ];
+        return $r;
+    }
+
     public function all()
     {
         $configs =  \App\Config::all();
@@ -30,6 +38,10 @@ class Question extends Controller
         $questionList =  \App\QuestionList::find($questionId);
 
         $questionList -> load('questions', 'explains');
+
+        foreach($questionList -> explains as $explain){
+            $explain -> load('user');
+        }
 
         return $questionList;
     }
