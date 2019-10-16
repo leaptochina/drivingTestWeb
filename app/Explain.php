@@ -10,4 +10,9 @@ class Explain extends Model
     {
         return $this->belongsTo('App\User');
     }
+
+    public function questionList()
+    {
+        return $this->belongsTo('App\QuestionList');
+    }
 }

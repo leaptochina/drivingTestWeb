@@ -25,10 +25,8 @@ Route::get('/q/all', 'Api\Question@all');
 Route::get('/q/{questionId}', 'Api\Question@show');
 Route::get('/u/{user_id}', 'Api\User@show');
 
-//Route::get('/u/', 'Api\User@error');
-
-
-
+Route::patch('/e/', 'Api\Explain@update');
+Route::post('/e/', 'Api\Explain@store');
 
 
 
