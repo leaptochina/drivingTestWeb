@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use Google\Cloud\Translate\TranslateClient;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
@@ -31,21 +32,31 @@ class Explain extends Controller
         }
         $explain -> question_list_id = $request -> question_list_id;
         $explain -> user_id = $existedUser -> id;
-        $explain -> explain_en = $translate->translate($request->explain, [
-            'target' => 'en',
-        ]);
-        $explain -> explain_zh = $translate->translate($request->explain, [
-            'target' => 'zh',
-        ]);
+        $explain -> explain_en = $request->explain_en;
+        $explain -> explain_zh = $request->explain_zh;
+
+        if ($explain -> explain_en == ""){
+            $explain -> explain_en = $translate->translate($request->explain_zh, [
+                'target' => 'en',
+            ])['text'];
+            $explain -> explain_en = str_replace('&#39;', "`", $explain -> explain_en);
+        }
+
+        if ($explain -> explain_zh == ""){
+            $explain -> explain_zh = $translate->translate($request->explain_en, [
+                'target' => 'zh',
+            ])['text'];
+        }
+
+
 
         $explain -> save();
         
 
+        return $this -> showQuestion($request -> question_list_id);
 
-
-        $questionController = new \App\Http\Controllers\Api\Question;
-        return $questionController -> show($request -> question_list_id);
     }
+
     public function update(Request $request)
     {
         
@@ -56,7 +67,11 @@ class Explain extends Controller
         }
         $existedUser = $existedUser[0];
 
-        $existExplain =  \App\Explain::where('id', $request -> explain_id) -> take(1) -> get()[0];
+        $existExplain =  \App\Explain::where('id', $request -> explain_id) -> take(1) -> get();
+        if (sizeof($existExplain) == 0){
+            return ;
+        }
+        $existExplain = $existExplain[0];
 
         $existZan =  \App\UserExplainAgree::where('user_id', $existedUser['id']) -> where('explain_id', $request -> explain_id) -> take(1) -> get();
         
@@ -79,11 +94,35 @@ class Explain extends Controller
         $existZan -> save();
         
         $questionList = $existExplain -> questionList;
-        $questionController = new \App\Http\Controllers\Api\Question;
+        
   
-        return $questionController -> show($questionList -> id);
+        return $this -> showQuestion($questionList -> id);
     }
 
+    public function destory($id, $user_identity)
+    {
+        
+        $existedUser =  \App\User::where('user_identity', $user_identity) -> take(1) -> get();
     
+        if (sizeof($existedUser) == 0){
+            return ;
+        }
+        $existedUser = $existedUser[0];
+
+        $existExplain =  \App\Explain::find($id);
+        $questionList = $existExplain -> questionList;  //先存储一下 防止删除以后找不到
+
+        if ($existExplain -> user_id == $existedUser -> id){
+            $existExplain -> delete();
+        }
+
+
+        return $this -> showQuestion($questionList -> id);
+    }
+    
+    public function showQuestion($questionListId){
+        $questionController = new \App\Http\Controllers\Api\Question;
+          return $questionController -> show($questionListId);
+    }
 
 }

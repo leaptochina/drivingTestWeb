@@ -27,7 +27,7 @@ Route::get('/u/{user_id}', 'Api\User@show');
 
 Route::patch('/e/', 'Api\Explain@update');
 Route::post('/e/', 'Api\Explain@store');
-
+Route::delete('/e/{id}/{user_identity}', 'Api\Explain@destory');
 
 
 
