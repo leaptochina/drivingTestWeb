@@ -83,16 +83,74 @@ class Mock extends Controller
 
       
 
+        //删掉只有开始没有结束的考试
+        \App\MockHistory::where('evaluate_score', 0)
+                -> where('start_time', '<', date('Y-m-d H:i:s', strtotime('-2 hours')))
+                -> forceDelete();
+
+        //重新生成全球排名
+        
+            //清理旧的排名
+            DB::table('mock_histories') -> update(['global_leaderboard_sort' => 0]);
+
+            $sorts = \App\MockHistory::where('evaluate_score', '<>', 0)
+                            // -> where('start_time', '<', date('Y-m-d H:i:s', strtotime('-30 days')))
+                            -> orderBy('evaluate_score', 'desc')
+                            -> get();
+
+            //生成排名
+            $sortNumber = 1;
+            for($i = 0; $i < sizeof($sorts); $i++){
+                $sort = $sorts[$i];
+                $found = false;
+                for($j = 0; $j < $i; $j++){
+                    $last = $sorts[$j];
+                    if ($last -> user_id == $sort -> user_id){
+                        $found = true;
+                        break;
+                    }
+                }
+                if (!$found){
+                    $sort -> global_leaderboard_sort = $sortNumber;
+                    $sort -> save();
+                    $sortNumber++;
+                }
+
+            }
+
+
         return $mock;
 
 
     }
 
     //全球排名结果
-    public function all(){
-        
+    public function all($user_identity){
+       
+        $myHistory = [];
+        $leaderboard = [];
+        $existedUser =  \App\User::where('user_identity', $user_identity) -> first();
+        if ($existedUser != null){
+            $myHistory =  \App\MockHistory::where('user_id', $existedUser -> id) 
+                            -> where('evaluate_score', '<>', 0)
+                            -> orderBy('start_time', 'desc')
+                            -> get();
+        }
 
-        return "";
+        $leaderboard =  \App\MockHistory::where('global_leaderboard_sort', '<>', 0)
+                            -> orderBy('global_leaderboard_sort')
+                            -> limit(50)
+                            -> get();
+
+        $leaderboard -> load('user');
+
+
+        $r = [
+            'my_history' => $myHistory,
+            'leaderboard' => $leaderboard,
+        ];
+        return $r;
+
     }
 
 }

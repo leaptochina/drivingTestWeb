@@ -20,6 +20,7 @@ class CreateMockHistoriesTable extends Migration
             $table->bigInteger('consume_time')->default(0);
             $table->bigInteger('correct_count')->default(0);
             $table->bigInteger('evaluate_score')->default(0);
+            $table->bigInteger('global_leaderboard_sort')->default(0);
             $table->timestamps();
             $table->softDeletes();
         });
