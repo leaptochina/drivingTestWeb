@@ -21,6 +21,7 @@ class CreateExplainsTable extends Migration
             $table->string('explain_en', 2000)->nullable();
             $table->bigInteger('like');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

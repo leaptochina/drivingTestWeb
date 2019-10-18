@@ -19,6 +19,7 @@ class UserExplainAgree extends Migration
             $table->bigInteger('explain_id');
             $table->boolean('is_agree');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

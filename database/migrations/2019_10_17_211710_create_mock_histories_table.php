@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateConfigsTable extends Migration
+class CreateMockHistoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,16 @@ class CreateConfigsTable extends Migration
      */
     public function up()
     {
-        Schema::create('configs', function (Blueprint $table) {
+        Schema::create('mock_histories', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('key');
-            $table->string('value');
+            $table->bigInteger('user_id');
+            $table->dateTime('start_time');
+            $table->bigInteger('consume_time')->default(0);
+            $table->bigInteger('correct_count')->default(0);
+            $table->bigInteger('evaluate_score')->default(0);
             $table->timestamps();
             $table->softDeletes();
         });
-
-        
     }
 
     /**
@@ -31,6 +32,6 @@ class CreateConfigsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('configs');
+        Schema::dropIfExists('mock_histories');
     }
 }
