@@ -13,7 +13,7 @@ use App\Http\Controllers\Controller;
 class Migrate extends Controller
 {
     public function translate(){
-        putenv('GOOGLE_APPLICATION_CREDENTIALS=D:\Me\Web\drivingTest\google_key.json');
+        putenv('GOOGLE_APPLICATION_CREDENTIALS=' . config('app.APP_ENV_TRANSLATE'));
        
         $translate = new TranslateClient();
 

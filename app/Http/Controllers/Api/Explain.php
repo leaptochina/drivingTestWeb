@@ -13,7 +13,7 @@ class Explain extends Controller
     
     public function store(Request $request)
     {
-        putenv('GOOGLE_APPLICATION_CREDENTIALS=D:\Me\Web\drivingTest\google_key.json');
+        putenv('GOOGLE_APPLICATION_CREDENTIALS=' . config('app.APP_ENV_TRANSLATE'));
         $translate = new TranslateClient();
 
 

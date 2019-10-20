@@ -17,6 +17,8 @@ Route::get('/', function () {
 
 Route::post('/u/', 'Api\User@store');
 
+Route::get('/test', 'Api\Test@test');
+
 
 Route::get('/config', 'Api\Config@all');
 
