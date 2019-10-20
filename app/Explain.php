@@ -3,11 +3,18 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Explain extends Model
 {
-    public function users()
+    use SoftDeletes;
+    public function user()
     {
-        return $this->hasOne('App\User');
+        return $this->belongsTo('App\User');
+    }
+
+    public function questionList()
+    {
+        return $this->belongsTo('App\QuestionList');
     }
 }

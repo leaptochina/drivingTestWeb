@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateExplainsTable extends Migration
+class CreateMockHistoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,14 @@ class CreateExplainsTable extends Migration
      */
     public function up()
     {
-        Schema::create('explains', function (Blueprint $table) {
+        Schema::create('mock_histories', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('user_id');
-            $table->bigInteger('question_list_id');
-            $table->string('explain_zh', 2000)->nullable();
-            $table->string('explain_en', 2000)->nullable();
-            $table->bigInteger('like');
+            $table->dateTime('start_time');
+            $table->bigInteger('consume_time')->default(0);
+            $table->bigInteger('correct_count')->default(0);
+            $table->bigInteger('evaluate_score')->default(0);
+            $table->bigInteger('global_leaderboard_sort')->default(0);
             $table->timestamps();
             $table->softDeletes();
         });
@@ -32,6 +33,6 @@ class CreateExplainsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('explains');
+        Schema::dropIfExists('mock_histories');
     }
 }

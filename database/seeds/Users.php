@@ -14,10 +14,12 @@ class Users extends Seeder
         DB::table('users')->truncate();
 
         DB::table('users')->insert([
-            'name' => 'Admin',
+            'name' => '驾考神器官方',
             'password' => '0',
-            'email' => 'pine@blueberrysolution.co.nz',
-            'icon' => 'bbs.png',
+            'email' => 'pine@blueberrysolution.co.nz',   
+            'user_identity' => 'WlKyqMJL9qVYSiJktADIbCyCTHr2',
+            'vip_level' => '2',
+            'icon' => 'icon_circle.png',
         ]);
     }
 }

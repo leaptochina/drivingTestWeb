@@ -41,6 +41,12 @@ return [
 
     'debug' => env('APP_DEBUG', false),
 
+
+    'APP_ENV_TRANSLATE' =>  env('APP_DEBUG', false) ? 
+                            env('APP_ENV_TRANSLATE_debug', 'D:\Me\Web\drivingTest\google_key.json') :
+                            env('APP_ENV_TRANSLATE_live', '/www/driving/google_key.json'),
+
+
     /*
     |--------------------------------------------------------------------------
     | Application URL
@@ -67,7 +73,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Pacific/Auckland',
 
     /*
     |--------------------------------------------------------------------------

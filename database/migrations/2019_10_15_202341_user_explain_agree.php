@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateConfigsTable extends Migration
+class UserExplainAgree extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,14 @@ class CreateConfigsTable extends Migration
      */
     public function up()
     {
-        Schema::create('configs', function (Blueprint $table) {
+        Schema::create('user_explain_agree', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('key');
-            $table->string('value');
+            $table->bigInteger('user_id');
+            $table->bigInteger('explain_id');
+            $table->boolean('is_agree');
             $table->timestamps();
             $table->softDeletes();
         });
-
-        
     }
 
     /**
@@ -31,6 +30,6 @@ class CreateConfigsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('configs');
+        Schema::dropIfExists('user_explain_agree');
     }
 }

@@ -26,6 +26,7 @@ class CreateQuestionsTable extends Migration
             $table->string('ans');
             $table->string('img');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

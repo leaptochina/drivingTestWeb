@@ -17,8 +17,12 @@ class CreateQuestionListsTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('accuracy_total');
             $table->bigInteger('accuracy_err');
+            $table->bigInteger('type_id') -> default(0);
+            $table->bigInteger('is_vip_only') -> default(0);
+            $table->bigInteger('is_user_uploaded') -> default(0);
             $table->decimal('accuracy_err_rate', 8, 6);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
