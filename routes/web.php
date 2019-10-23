@@ -22,9 +22,11 @@ Route::get('/test', 'Api\Test@test');
 
 Route::get('/config', 'Api\Config@all');
 
+//问题相关
 Route::get('/q/configs', 'Api\Question@configs');
 Route::get('/q/all', 'Api\Question@all');
 Route::get('/q/{questionId}', 'Api\Question@show');
+Route::get('q/{question_list_id}/{is_correct}', 'Api\Question@saveMyAnswer');
 Route::get('/u/{user_id}', 'Api\User@show');
 
 
@@ -38,6 +40,9 @@ Route::get('/m/{user_identity}', 'Api\Mock@start');
 Route::patch('/m/', 'Api\Mock@finished');
 Route::get('/ms/{user_identity}', 'Api\Mock@all');  //全球排名结果
 
+
+//Feedback
+Route::post('/f/', 'Api\Feedback@store');  //反馈
 
 Route::get('/imgs/{filename}', function ($filename) {
     $fullPath = base_path().DIRECTORY_SEPARATOR.'resources'.DIRECTORY_SEPARATOR.'images'.DIRECTORY_SEPARATOR. $filename;

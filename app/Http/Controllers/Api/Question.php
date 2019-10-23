@@ -9,7 +9,15 @@ use Illuminate\Support\Facades\DB;
 class Question extends Controller
 {
     public function configs(){
-        $mostError = \App\QuestionList::orderBy("accuracy_err_rate", 'desc') -> limit(50) -> get(['id']);
+        //顺序练习数组
+        $orders = \App\QuestionList::get(['id']);
+        $ordersArray = array();
+        foreach($orders as $order){
+            array_push($ordersArray, $order -> id);
+        }
+
+        //常错题数组
+        $mostError = \App\QuestionList::orderBy("accuracy_err_rate", 'desc') -> limit(5) -> get(['id']);
         $mostErrorArray = array();
         foreach($mostError as $error){
             array_push($mostErrorArray, $error -> id);
@@ -17,7 +25,7 @@ class Question extends Controller
         
 
         $r = [
-            'questionTotalCount' => \App\QuestionList::count(),
+            'orderExercise' => $ordersArray,
             'languageList' => \App\Language::all(),
             'mostError' => $mostErrorArray,
         ];
@@ -59,6 +67,23 @@ class Question extends Controller
         return $questionList;
     }
 
-    
+    public function saveMyAnswer($question_list_id, $is_correct){
+
+        $questionList =  \App\QuestionList::find($question_list_id);
+        if ($questionList == null){
+            return;
+        }
+        $questionList -> accuracy_total += 1;
+        if (!$is_correct){
+            $questionList -> accuracy_err += 1;
+        }
+        
+
+        $questionList -> accuracy_err_rate = $questionList -> accuracy_err * 100 / $questionList -> accuracy_total;
+        $questionList -> save();
+
+
+        return $questionList;
+    }
 
 }
