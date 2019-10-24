@@ -43,6 +43,23 @@ class User extends Controller
         $existedUser -> phone = $request -> phone;
         $existedUser -> icon = $request -> icon;
         $existedUser -> name = $request -> name;
+
+        if ($request -> name == ""){
+            if (strlen($existedUser -> phone) > 8){
+                $xing = substr($existedUser -> phone, 5, 3);  //获取手机号中间四位
+                $existedUser -> name = str_replace($xing,'****',$existedUser -> phone);  //用****进行替换
+            }
+            else{
+                $existedUser -> name = 'Anonymous User';
+            }
+            
+        }
+
+        if ($request -> icon == ""){
+            $existedUser -> icon = 'http://drivingtest.blueberrysolution.co.nz/imgs/no_user.png';
+        }
+
+
         $existedUser -> save();
 
         return $existedUser;

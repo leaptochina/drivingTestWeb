@@ -23,7 +23,8 @@ Route::get('/test', 'Api\Test@test');
 Route::get('/config', 'Api\Config@all');
 
 //问题相关
-Route::get('/q/configs', 'Api\Question@configs');
+Route::get('/q/configs/', 'Api\Question@configs'); //即将弃用 1.0.2版本
+Route::get('/q/config/{user_identity}/{version_code}/{language_code}', 'Api\Question@configNew');
 Route::get('/q/all', 'Api\Question@all');
 Route::get('/q/{questionId}', 'Api\Question@show');
 Route::get('q/{question_list_id}/{is_correct}', 'Api\Question@saveMyAnswer');
