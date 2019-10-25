@@ -26,10 +26,13 @@ Route::get('/config', 'Api\Config@all');
 Route::get('/q/configs/', 'Api\Question@configs'); //即将弃用 1.0.2版本
 Route::get('/q/config/{user_identity}/{version_code}/{language_code}', 'Api\Question@configNew');
 Route::get('/q/all', 'Api\Question@all');
-Route::get('/q/{questionId}', 'Api\Question@show');
+Route::get('/q/{questionId}', 'Api\Question@show'); //即将弃用 1.0.2版本
+Route::get('/q/{question_list_id}/{user_identity}/{verify}', 'Api\Question@showNew'); 
+Route::post('/qs/', 'Api\Question@search'); 
 Route::get('q/{question_list_id}/{is_correct}', 'Api\Question@saveMyAnswer');
-Route::get('/u/{user_id}', 'Api\User@show');
 
+Route::get('/u/{user_id}', 'Api\User@show');
+Route::post('/u/icon/{user_identity}', 'Api\User@uploadIcon');
 
 Route::patch('/e/', 'Api\Explain@update');
 Route::post('/e/', 'Api\Explain@store');
@@ -53,6 +56,13 @@ Route::get('/imgs/{filename}', function ($filename) {
     }, 200, ['Content-Type' => 'image/jpeg']);
 });
 
+Route::get('/user_upload/{filename}', function ($filename) {
+    $fullPath = base_path().DIRECTORY_SEPARATOR.'resources'.DIRECTORY_SEPARATOR.'user_upload'.DIRECTORY_SEPARATOR. $filename;
+
+    return response()->stream(function () use ($fullPath) {
+        echo file_get_contents($fullPath);
+    }, 200, ['Content-Type' => 'image/jpeg']);
+});
 
 Route::get('/mi/show', 'Api\Migrate@show');
 Route::get('/mi/translate', 'Api\Migrate@translate');

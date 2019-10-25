@@ -10,7 +10,8 @@ class Question extends Controller
 { 
     public function configNew($user_identity, $version_code, $language_code){
         
-        $existedUser =  \App\User::where('user_identity', $user_identity) -> first();
+        $existedUser =  \App\User::where('user_identity', $user_identity) -> first() -> makeVisible('user_identity');
+
         $allowErrorProne = 0;
         $allowPrivateQuestions = 0;
         if ($existedUser != null){
@@ -58,6 +59,7 @@ class Question extends Controller
                 'prone_description2' => '试用本功能，您能看到Top 5的易错题，尝试一下，看看你的正确率有多少',
                 'prone_description3' => '超级低价，仅需$9.99', //ps 本功能不定期打折，欢迎关注！',
                 'prone_description4' => "今日特价仅需 $2.99",
+                'prone_buy_people' => "* 已经有 3 人想要购买此服务",
             ];
         }
         else{
@@ -66,20 +68,50 @@ class Question extends Controller
                 'prone_description2' => 'Try it, you will get Top 5 Error-Prone questions, How easy are they :)',
                 'prone_description3' => 'Super low price, only $9.99',
                 'prone_description4' => "Today Offer: Only $2.99 (70% off)",
+                'prone_buy_people' => "* There are 3 user want to purchase this services",
             ];
         }
         
+        //系统通知
+        if ($language_code == 'zh'){
+            $systemNotice = "";
+        }
+        else{
+            $systemNotice = "";
+        }
+
+        //最新版本
+        if ($language_code == 'zh'){
+            $lastestVersion = [
+                'version_number' => 103,
+                'whatsnew' => '您必须更新才能使用',
+                'download_url' => '',
+            ];
+        }
+        else{
+            $lastestVersion = [
+                'version_number' => 103,
+                'whatsnew' => 'You must update app before use it!',
+                'download_url' => '',
+            ];
+        }
+
+       
+       
 
         $r = [
             'orderExercise' => $ordersArray,
             'languageList' => \App\Language::all(),
             'mostError' => $mostErrorArray,
             'userInfo' => $existedUser,
-            'proneDescription' => $proneDescription
+            'proneDescription' => $proneDescription,
+            'systemNotice' => $systemNotice,
+            'lastestVersion' => $lastestVersion,
         ];
         return $r;
     }
     
+
 
     public function all()    {
         $configs =  \App\Config::all();
@@ -97,6 +129,66 @@ class Question extends Controller
         return $r;
     }
 
+    public function showNew($question_list_id, $user_identity, $verify)    {
+        $serverVerify = md5($question_list_id . "pine" . $user_identity);
+        
+        if (strtolower($verify) != strtolower($serverVerify)){
+            return "Error";
+        }
+
+        $questionList =  \App\QuestionList::find($question_list_id);
+
+        $questionList -> load([
+            'questions', 
+            'explains' => function ($query) {
+                $query->orderBy('like', 'desc');
+            }
+        ]);
+
+        foreach($questionList -> explains as $explain){
+            $explain -> load('user');
+        }
+
+        return $questionList;
+    }
+
+    public function search(Request $request)    {
+        $search_word = $request -> search_word;
+        $user_identity = $request -> user_identity;
+        $verify = $request -> verify;
+        $language = $request -> language;
+
+        $serverVerify = md5($search_word . "pine" . $user_identity);
+        
+        if (strtolower($verify) != strtolower($serverVerify)){
+            return "Error";
+        }
+
+        $languageId = DB::table('languages') -> where ('flag', $language) -> first() -> id;
+
+        $questions = DB::table('questions')
+            -> where('language_id', $languageId)
+            -> where(function ($query) use ($search_word)  {
+                $query -> where('topic', 'like', "%" . $search_word . "%")
+                    -> orWhere('a', 'like', "%" . $search_word . "%")
+                    -> orWhere('b', 'like', "%" . $search_word . "%")
+                    -> orWhere('c', 'like', "%" . $search_word . "%")
+                    -> orWhere('d', 'like', "%" . $search_word . "%")
+                    -> orWhere('e', 'like', "%" . $search_word . "%");
+            }) -> get();
+        
+        
+        $r = [
+            'questions' => $questions,
+        ];                       
+
+        return $r;
+
+
+    }
+
+    
+    //即将弃用 1.0.2版本    
     public function show($questionId)    {
         $questionList =  \App\QuestionList::find($questionId);
 
