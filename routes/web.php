@@ -31,8 +31,12 @@ Route::get('/q/{question_list_id}/{user_identity}/{verify}', 'Api\Question@showN
 Route::post('/qs/', 'Api\Question@search'); 
 Route::get('q/{question_list_id}/{is_correct}', 'Api\Question@saveMyAnswer');
 
+//用户相关
 Route::get('/u/{user_id}', 'Api\User@show');
 Route::post('/u/icon/{user_identity}', 'Api\User@uploadIcon');
+Route::patch('/u/nickname/{user_identity}', 'Api\User@updateNickname');
+Route::patch('/u/email/{user_identity}', 'Api\User@updateEmail');
+
 
 Route::patch('/e/', 'Api\Explain@update');
 Route::post('/e/', 'Api\Explain@store');

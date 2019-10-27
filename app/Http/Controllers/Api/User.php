@@ -25,7 +25,36 @@ class User extends Controller
 
         return $r; 
     }
+
+    public function updateNickname($user_identity, Request $request){
+        $existedUser =  \App\User::where('user_identity', $request -> user_identity) -> first();
+        
+        if ($existedUser == null){
+            return "UserNotExist";
+        }
+
+        
+        $existedUser -> name = $request -> nickname;
+        $existedUser -> save();
+
+        return $existedUser;
+    }
+
+    public function updateEmail($user_identity, Request $request){
+        $existedUser =  \App\User::where('user_identity', $request -> user_identity) -> first();
+        
+        if ($existedUser == null){
+            return "UserNotExist";
+        }
+
+        $existedUser -> email = $request -> email;
+        $existedUser -> save();
+
+        return $existedUser;
+
+    }
     
+
     public function uploadIcon($user_identity, Request $request){
         $existedUser =  \App\User::where('user_identity', $request -> user_identity) -> first();
         
@@ -49,7 +78,7 @@ class User extends Controller
         $existedUser -> icon = "http://{$_SERVER['HTTP_HOST']}/user_upload/{$fileName}";
         $existedUser -> save();
 
-        echo $existedUser;
+        return $existedUser;
     }
 
     public function store(Request $request)
