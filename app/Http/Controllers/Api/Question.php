@@ -10,11 +10,12 @@ class Question extends Controller
 { 
     public function configNew($user_identity, $version_code, $language_code){
         
-        $existedUser =  \App\User::where('user_identity', $user_identity) -> first() -> makeVisible('user_identity');
+        $existedUser =  \App\User::where('user_identity', $user_identity) -> first();
 
         $allowErrorProne = 0;
         $allowPrivateQuestions = 0;
         if ($existedUser != null){
+            $existedUser = $existedUser -> makeVisible('user_identity');
             $allowErrorProne = $existedUser -> enable_prone;
             $allowPrivateQuestions = $existedUser -> enable_private_question;
         }

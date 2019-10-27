@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Log;
 
 class User extends Controller
 {
@@ -32,11 +33,20 @@ class User extends Controller
             return "UserNotExist";
         }
 
-        $fileName = strtotime("now");
+        //Log::info($request);
 
-        Image::make($request -> file('image'))->save("../resources/user_upload/{$fileName}.jpg");
+
         
-        $existedUser -> icon = "http://drivingtest.blueberrysolution.co.nz/user_upload/{$fileName}.jpg";
+        $image = $request -> file('image');
+        $fileName = strtotime("now") . '.' . $image -> getClientOriginalExtension();
+        //$image -> move("../resources/user_upload/", $fileName);
+
+        Image::make($request -> file('image')) -> resize(500,500) -> save("../resources/user_upload/{$fileName}");
+
+
+
+        
+        $existedUser -> icon = "http://{$_SERVER['HTTP_HOST']}/user_upload/{$fileName}";
         $existedUser -> save();
 
         echo $existedUser;
