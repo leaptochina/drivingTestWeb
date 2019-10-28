@@ -52,6 +52,9 @@ Route::get('/ms/{user_identity}', 'Api\Mock@all');  //全球排名结果
 //Feedback
 Route::post('/f/', 'Api\Feedback@store');  //反馈
 
+//Pravacy
+Route::get('/pravacy/', 'Api\Pravacy@show');  //反馈
+
 Route::get('/imgs/{filename}', function ($filename) {
     $fullPath = base_path().DIRECTORY_SEPARATOR.'resources'.DIRECTORY_SEPARATOR.'images'.DIRECTORY_SEPARATOR. $filename;
 
