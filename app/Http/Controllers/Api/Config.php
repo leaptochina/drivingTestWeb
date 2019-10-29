@@ -16,7 +16,7 @@ class Config extends Controller
         $version_code = $request -> version_code;
         $language_code = $request -> language_code;
 
-
+        $usercount = \App\User::count();
         
         $existedUser =  \App\User::where('user_identity', $user_identity) -> first();
 
@@ -69,7 +69,7 @@ class Config extends Controller
                 'prone_description2' => '试用本功能，您能看到Top 5的易错题，尝试一下，看看你的正确率有多少',
                 'prone_description3' => '开通本功能需要 500 金币', //ps 本功能不定期打折，欢迎关注！',
                 'prone_description4' => "今日特价仅需 $prone_price 金币",
-                'prone_buy_people' => "* 已经有 3 人购买了此服务",
+                'prone_buy_people' => "* 已经有 $usercount 人试用了此服务",
             ];
         }
         else{
@@ -79,7 +79,7 @@ class Config extends Controller
                 'prone_description2' => 'Try it, you will get Top 5 Error-Prone questions, How easy are they :)',
                 'prone_description3' => 'Super low price, only 500 Coins',
                 'prone_description4' => "Today Offer: Only $prone_price Coins",
-                'prone_buy_people' => "* There are 3 users purchase this services",
+                'prone_buy_people' => "* There are $usercount users tried this services",
             ];
         }
         
@@ -94,14 +94,14 @@ class Config extends Controller
         //最新版本
         if ($language_code == 'zh'){
             $lastestVersion = [
-                'version_number' => 103,
+                'version_number' => 105,
                 'whatsnew' => '您必须更新才能使用',
                 'download_url' => '',
             ];
         }
         else{
             $lastestVersion = [
-                'version_number' => 103,
+                'version_number' => 105,
                 'whatsnew' => 'You must update app before use it!',
                 'download_url' => '',
             ];
@@ -109,6 +109,8 @@ class Config extends Controller
 
         //视频广告给的奖励
         $video_reward = config('app.video_reward');
+        //题库版本
+        $version_number = date("Y-m-d", strtotime("last Sunday"));;
 
         $r = [
             'orderExercise' => $ordersArray,
@@ -118,7 +120,8 @@ class Config extends Controller
             'proneDescription' => $proneDescription,
             'systemNotice' => $systemNotice,
             'lastestVersion' => $lastestVersion,
-            'video_reward' => $video_reward
+            'video_reward' => $video_reward,
+            'version_number' => $version_number
         ];
         return $r;
     }
