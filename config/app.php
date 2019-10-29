@@ -2,7 +2,7 @@
 
 return [
     'sign_in_max_coin' => 5,
-    'prone_price' => 32,
+    'prone_price' => 68,
     'video_reward' => 10,
 
     /*
