@@ -12,10 +12,10 @@ class Config extends Controller
 {
 
     public function config(Request $request){
-
         $user_identity = $request -> user_identity;
         $version_code = $request -> version_code;
         $language_code = $request -> language_code;
+
 
         
         $existedUser =  \App\User::where('user_identity', $user_identity) -> first();
@@ -61,25 +61,25 @@ class Config extends Controller
         }
         
         //易错题描述
-        
+        $prone_price = config('app.prone_price');
         if ($language_code == 'zh'){
             $proneDescription = [
-                'prone_enable'  => false,
+                'prone_enable'  => true,
                 'prone_description1' => '本功能精选50道大家在考试中经常答错的题目，其他题目都太简单了，并不需要看了，节约您的宝贵时间，只需15分钟，从容应对考试',
                 'prone_description2' => '试用本功能，您能看到Top 5的易错题，尝试一下，看看你的正确率有多少',
-                'prone_description3' => '超级低价，仅需$9.99', //ps 本功能不定期打折，欢迎关注！',
-                'prone_description4' => "今日特价仅需 $2.99",
-                'prone_buy_people' => "* 已经有 3 人想要购买此服务",
+                'prone_description3' => '开通本功能需要 100 金币', //ps 本功能不定期打折，欢迎关注！',
+                'prone_description4' => "今日特价仅需 $prone_price 金币",
+                'prone_buy_people' => "* 已经有 3 人购买了此服务",
             ];
         }
         else{
             $proneDescription = [
-                'prone_enable'  => false,
+                'prone_enable'  => true,
                 'prone_description1' => 'This function contains 50 questions which others normally made mistake during the test, Save your precious time and pass the test by learn 15 minutes',
                 'prone_description2' => 'Try it, you will get Top 5 Error-Prone questions, How easy are they :)',
-                'prone_description3' => 'Super low price, only $9.99',
-                'prone_description4' => "Today Offer: Only $2.99 (70% off)",
-                'prone_buy_people' => "* There are 3 user want to purchase this services",
+                'prone_description3' => 'Super low price, only 100 Coins',
+                'prone_description4' => "Today Offer: Only $prone_price Coins",
+                'prone_buy_people' => "* There are 3 user purchase this services",
             ];
         }
         
@@ -107,8 +107,8 @@ class Config extends Controller
             ];
         }
 
-       
-       
+        //视频广告给的奖励
+        $video_reward = config('app.video_reward');
 
         $r = [
             'orderExercise' => $ordersArray,
@@ -118,6 +118,7 @@ class Config extends Controller
             'proneDescription' => $proneDescription,
             'systemNotice' => $systemNotice,
             'lastestVersion' => $lastestVersion,
+            'video_reward' => $video_reward
         ];
         return $r;
     }

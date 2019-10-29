@@ -22,7 +22,7 @@ Route::get('/test', 'Api\Test@test');
 
 //配置相关
 Route::get('/config', 'Api\Config@all');
-Route::post('/q/config', 'Api\Config@config'); 
+Route::post('/config', 'Api\Config@config'); 
 Route::get('/q/config/{user_identity}/{version_code}/{language_code}', 'Api\Question@configNew');    //1.0.5（不含）以前弃用
 
 
@@ -31,6 +31,11 @@ Route::get('/q/all', 'Api\Question@all');
 Route::get('/q/{question_list_id}/{user_identity}/{verify}', 'Api\Question@showNew'); 
 Route::post('/qs/', 'Api\Question@search'); 
 Route::get('q/{question_list_id}/{is_correct}', 'Api\Question@saveMyAnswer');
+
+//金币相关
+Route::get('/c/signin/{user_identity}', 'Api\Coin@signin');
+Route::get('/c/enable_prone/{user_identity}', 'Api\Coin@enableProne');
+Route::get('/c/earn_coin/{user_identity}/{time}/{check_sum}', 'Api\Coin@earnCoin');
 
 //用户相关
 Route::get('/u/{user_id}', 'Api\User@show');
