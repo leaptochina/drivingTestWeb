@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Log;
 
 class User extends Controller
 {
-    
+
 
     public function show($user_id)
     {

@@ -25,6 +25,8 @@ class CreateUsersTable extends Migration
             $table->bigInteger('has_ad')->default(1);
             $table->bigInteger('enable_prone')->default(0);
             $table->bigInteger('enable_private_question')->default(0);
+            $table->bigInteger('coin')->default(0);
+            $table->date('last_daily_sign_in')->default("20191029");
             $table->rememberToken()->nullable();
             $table->timestamps();
             $table->softDeletes();
