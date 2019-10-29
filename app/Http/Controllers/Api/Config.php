@@ -67,7 +67,7 @@ class Config extends Controller
                 'prone_enable'  => true,
                 'prone_description1' => '本功能精选50道大家在考试中经常答错的题目，其他题目都太简单了，并不需要看了，节约您的宝贵时间，只需15分钟，从容应对考试',
                 'prone_description2' => '试用本功能，您能看到Top 5的易错题，尝试一下，看看你的正确率有多少',
-                'prone_description3' => '开通本功能需要 100 金币', //ps 本功能不定期打折，欢迎关注！',
+                'prone_description3' => '开通本功能需要 500 金币', //ps 本功能不定期打折，欢迎关注！',
                 'prone_description4' => "今日特价仅需 $prone_price 金币",
                 'prone_buy_people' => "* 已经有 3 人购买了此服务",
             ];
@@ -77,9 +77,9 @@ class Config extends Controller
                 'prone_enable'  => true,
                 'prone_description1' => 'This function contains 50 questions which others normally made mistake during the test, Save your precious time and pass the test by learn 15 minutes',
                 'prone_description2' => 'Try it, you will get Top 5 Error-Prone questions, How easy are they :)',
-                'prone_description3' => 'Super low price, only 100 Coins',
+                'prone_description3' => 'Super low price, only 500 Coins',
                 'prone_description4' => "Today Offer: Only $prone_price Coins",
-                'prone_buy_people' => "* There are 3 user purchase this services",
+                'prone_buy_people' => "* There are 3 users purchase this services",
             ];
         }
         
