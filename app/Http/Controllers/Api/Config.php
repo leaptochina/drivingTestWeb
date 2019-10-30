@@ -26,6 +26,10 @@ class Config extends Controller
             $existedUser = $existedUser -> makeVisible('user_identity');
             $allowErrorProne = $existedUser -> enable_prone;
             $allowPrivateQuestions = $existedUser -> enable_private_question;
+
+            $existedUser -> last_ip = request()->server('SERVER_ADDR');
+            $existedUser -> last_login_time = date("Y-m-d H:i:s");
+            $existedUser -> save();
         }
 
         //顺序练习数组
@@ -109,8 +113,44 @@ class Config extends Controller
 
         //视频广告给的奖励
         $video_reward = config('app.video_reward');
+        
+
         //题库版本
-        $version_number = date("Y-m-d", strtotime("last Sunday"));;
+        $version_number = date("Y-m-d", strtotime("last Sunday"));
+
+        //谷歌支付相关
+        if ($language_code == 'zh'){
+            $google_purchase = [
+                [
+                    'purchase_money' => 2.99,
+                    'purchase_coin' => config('app.coin_200'),
+                    'purchase_word' => '【谷歌支付】金币',
+                    'purchase_key' => 'coin_200',
+                ],[
+                    'purchase_money' => 9.99,
+                    'purchase_coin' => config('app.coin_1000'),
+                    'purchase_word' => '【谷歌支付】大量金币',
+                    'purchase_key' => 'coin_1000',
+                ]
+            ];
+        }
+        else{
+            $google_purchase = [
+                [
+                    'purchase_money' => 2.99,
+                    'purchase_coin' => config('app.coin_200'),
+                    'purchase_word' => '[Google Pay] Coins',
+                    'purchase_key' => 'coin_200',
+                ],[
+                    'purchase_money' => 9.99,
+                    'purchase_coin' => config('app.coin_1000'),
+                    'purchase_word' => '[Google Pay] Ocean of Coins',
+                    'purchase_key' => 'coin_1000',
+                ]
+            ];
+        }
+        
+            
 
         $r = [
             'orderExercise' => $ordersArray,
@@ -120,7 +160,8 @@ class Config extends Controller
             'proneDescription' => $proneDescription,
             'systemNotice' => $systemNotice,
             'lastestVersion' => $lastestVersion,
-            'video_reward' => $video_reward,
+            'video_reward' => $video_reward, 
+            'google_purchase' => $google_purchase,
             'version_number' => $version_number
         ];
         return $r;

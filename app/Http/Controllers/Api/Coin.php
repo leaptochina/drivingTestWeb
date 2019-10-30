@@ -73,6 +73,62 @@ class Coin extends Controller
 
     }
 
+    public function purchaseCoin($user_identity, Request $request){
+        $order_id = $request -> order_id;
+        $money_out = $request -> money_out;
+        $purchase_token = $request -> purchase_token;
+        $coin_gain = config('app.' . $request -> sku);
+        $signature = $request -> signature;
+        $sku = $request -> sku;
+        $originalJson = $request -> originalJson;
+        $purchaseTime = $request -> purchaseTime;
+        $ip = request()->server('SERVER_ADDR');
+        $check_sum = $request -> check_sum;
+
+
+        $serverVerify = md5("pine$order_id$signature");
+        
+        if (strtolower($check_sum) != strtolower($serverVerify)){
+            return "Error";
+        }
+
+        $user =  \App\User::where('user_identity', $user_identity) -> first();
+        
+        if ($user == null){
+            return "UserNotExist";
+        }
+
+        $existOrder =  \App\Purchase::where('order_id', $order_id) -> first();
+        
+        if ($existOrder != null){
+            return "ExistOrder";
+        }
+
+        $purchase = new \App\Purchase;
+        $purchase -> user_id = $user -> id;
+        $purchase -> order_id = $order_id;
+        $purchase -> money_out = $money_out;
+        $purchase -> purchase_token = $purchase_token;
+        $purchase -> coin_gain = $coin_gain;
+        $purchase -> signature = $signature;
+        $purchase -> sku = $sku;
+        $purchase -> originalJson = $originalJson;
+        $purchase -> purchaseTime = $purchaseTime;
+        $purchase -> ip = $ip;
+        $purchase -> save();
+
+        $user -> coin += $coin_gain;
+        $user -> save();
+
+
+
+
+
+
+        return $user;
+
+    }
+
     public function earnCoin($user_identity, $time, $check_sum){
         $video_reward = config('app.video_reward');
 
