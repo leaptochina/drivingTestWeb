@@ -82,7 +82,7 @@ class Coin extends Controller
         $sku = $request -> sku;
         $originalJson = $request -> originalJson;
         $purchaseTime = $request -> purchaseTime;
-        $ip = request()->server('SERVER_ADDR');
+        $ip = $this -> getRealIp();
         $check_sum = $request -> check_sum;
 
 
@@ -149,6 +149,26 @@ class Coin extends Controller
 
         return $user;
 
+    }
+
+    public function getRealIp() {
+        $ip = false;
+        if (!empty($_SERVER["HTTP_CLIENT_IP"])) {
+            $ip = $_SERVER["HTTP_CLIENT_IP"];
+        }
+        if (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+            $ips = explode(", ", $_SERVER['HTTP_X_FORWARDED_FOR']);
+            if ($ip) {
+                array_unshift($ips, $ip);
+                $ip = FALSE;}
+            for ($i = 0; $i < count($ips); $i++) {
+                if (!eregi("^(10│172.16│192.168).", $ips[$i])) {
+                    $ip = $ips[$i];
+                    break;
+                }
+            }
+        }
+        return ($ip ? $ip : $_SERVER['REMOTE_ADDR']);
     }
 
 }

@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\DB;
 class Config extends Controller
 {
 
+
     public function config(Request $request){
         $user_identity = $request -> user_identity;
         $version_code = $request -> version_code;
@@ -27,7 +28,7 @@ class Config extends Controller
             $allowErrorProne = $existedUser -> enable_prone;
             $allowPrivateQuestions = $existedUser -> enable_private_question;
 
-            $existedUser -> last_ip = request()->server('SERVER_ADDR');
+            $existedUser -> last_ip = $this -> getRealIp();
             $existedUser -> last_login_time = date("Y-m-d H:i:s");
             $existedUser -> save();
         }
@@ -177,5 +178,23 @@ class Config extends Controller
         return $configs;
     }
 
-    
+    public function getRealIp() {
+        $ip = false;
+        if (!empty($_SERVER["HTTP_CLIENT_IP"])) {
+            $ip = $_SERVER["HTTP_CLIENT_IP"];
+        }
+        if (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+            $ips = explode(", ", $_SERVER['HTTP_X_FORWARDED_FOR']);
+            if ($ip) {
+                array_unshift($ips, $ip);
+                $ip = FALSE;}
+            for ($i = 0; $i < count($ips); $i++) {
+                if (!eregi("^(10│172.16│192.168).", $ips[$i])) {
+                    $ip = $ips[$i];
+                    break;
+                }
+            }
+        }
+        return ($ip ? $ip : $_SERVER['REMOTE_ADDR']);
+    }
 }
