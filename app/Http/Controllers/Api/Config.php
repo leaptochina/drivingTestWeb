@@ -99,14 +99,14 @@ class Config extends Controller
         //最新版本
         if ($language_code == 'zh'){
             $lastestVersion = [
-                'version_number' => 105,
+                'version_number' => 108,
                 'whatsnew' => '您必须更新才能使用',
                 'download_url' => '',
             ];
         }
         else{
             $lastestVersion = [
-                'version_number' => 105,
+                'version_number' => 108,
                 'whatsnew' => 'You must update app before use it!',
                 'download_url' => '',
             ];

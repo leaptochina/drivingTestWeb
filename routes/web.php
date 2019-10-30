@@ -79,6 +79,14 @@ Route::get('/user_upload/{filename}', function ($filename) {
     }, 200, ['Content-Type' => 'image/jpeg']);
 });
 
+Route::get('/question_img/{filename}', function ($filename) {
+    $fullPath = base_path().DIRECTORY_SEPARATOR.'resources'.DIRECTORY_SEPARATOR.'question_img'.DIRECTORY_SEPARATOR. $filename;
+
+    return response()->stream(function () use ($fullPath) {
+        echo file_get_contents($fullPath);
+    }, 200, ['Content-Type' => 'image/jpeg']);
+});
+
 Route::get('/mi/show', 'Api\Migrate@show');
 Route::get('/mi/translate', 'Api\Migrate@translate');
 

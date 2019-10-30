@@ -20,7 +20,7 @@ class Users extends Seeder
             'email' => 'pine@blueberrysolution.co.nz',   
             'user_identity' => '000',
             'has_ad' => '1',
-            'icon' => 'http://drivingtest.blueberrysolution.co.nz/imgs/icon_circle.png',
+            'icon' => '/imgs/icon_circle.png',
         ]);
 
         DB::table('users')->insert([
@@ -45,12 +45,133 @@ class Users extends Seeder
 
         DB::table('users')->insert([
             'id' => '4',
-            'name' => 'Niantao Feng',
+            'name' => 'coco',
             'password' => '0',
             'email' => 'test@gmail.com',   
             'user_identity' => 'testtttt',
             'has_ad' => '1',
             'icon' => 'https://lh4.googleusercontent.com/-v6nw9fsot38/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3rff-MqWAt-MzHK0bFTgCkwNU37eQA/s96-c/photo.jpg',
+        ]);
+
+        DB::table('users')->insert([
+            'id' => '5',
+            'name' => 'Quinn2019',
+            'password' => '0',
+            'email' => 'test@gmail.com',   
+            'user_identity' => 'test1',
+            'has_ad' => '1',
+            'icon' => '/imgs/test1.jpg',
+        ]);
+
+        DB::table('users')->insert([
+            'id' => '6',
+            'name' => 'softer',
+            'password' => '0',
+            'email' => 'test@gmail.com',   
+            'user_identity' => 'test2',
+            'has_ad' => '1',
+            'icon' => '/imgs/test2.jpg',
+        ]);
+
+        DB::table('users')->insert([
+            'id' => '7',
+            'name' => 'S小单k',
+            'password' => '0',
+            'email' => 'test@gmail.com',   
+            'user_identity' => 'test3',
+            'has_ad' => '1',
+            'icon' => '/imgs/test3.jpg',
+        ]);
+
+        DB::table('users')->insert([
+            'id' => '8',
+            'name' => 'Ting',
+            'password' => '0',
+            'email' => 'test@gmail.com',   
+            'user_identity' => 'test4',
+            'has_ad' => '1',
+            'icon' => '/imgs/test4.jpg',
+        ]);
+
+        DB::table('users')->insert([
+            'id' => '9',
+            'name' => 'Alan Qin',
+            'password' => '0',
+            'email' => 'test@gmail.com',   
+            'user_identity' => 'test5',
+            'has_ad' => '1',
+            'icon' => '/imgs/test5.jpg',
+        ]);
+
+        DB::table('users')->insert([
+            'id' => '10',
+            'name' => 'LSY',
+            'password' => '0',
+            'email' => 'test@gmail.com',   
+            'user_identity' => 'test6',
+            'has_ad' => '1',
+            'icon' => '/imgs/test6.jpg',
+        ]);
+
+        DB::table('users')->insert([
+            'id' => '11',
+            'name' => 'Referee',
+            'password' => '0',
+            'email' => 'test@gmail.com',   
+            'user_identity' => 'test7',
+            'has_ad' => '1',
+            'icon' => '/imgs/test7.jpg',
+        ]);
+
+        DB::table('users')->insert([
+            'id' => '12',
+            'name' => '郭先生',
+            'password' => '0',
+            'email' => 'test@gmail.com',   
+            'user_identity' => 'test8',
+            'has_ad' => '1',
+            'icon' => '/imgs/test8.jpg',
+        ]);
+
+        DB::table('users')->insert([
+            'id' => '13',
+            'name' => '仂语',
+            'password' => '0',
+            'email' => 'test@gmail.com',   
+            'user_identity' => 'test9',
+            'has_ad' => '1',
+            'icon' => '/imgs/test9.jpg',
+        ]);
+
+        DB::table('users')->insert([
+            'id' => '14',
+            'name' => 'What',
+            'password' => '0',
+            'email' => 'test@gmail.com',   
+            'user_identity' => 'test10',
+            'has_ad' => '1',
+            'icon' => '/imgs/test10.jpg',
+        ]);
+
+      
+        DB::table('users')->insert([
+            'id' => '15',
+            'name' => 'Tao',
+            'password' => '0',
+            'email' => 'test@gmail.com',   
+            'user_identity' => 'test11',
+            'has_ad' => '1',
+            'icon' => '/imgs/test11.jpg',
+        ]);
+
+        DB::table('users')->insert([
+            'id' => '16',
+            'name' => 'Mai Jiang',
+            'password' => '0',
+            'email' => 'test@gmail.com',   
+            'user_identity' => 'test12',
+            'has_ad' => '1',
+            'icon' => '/imgs/test12.jpg',
         ]);
     }
 }
