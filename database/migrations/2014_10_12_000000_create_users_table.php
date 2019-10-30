@@ -27,6 +27,8 @@ class CreateUsersTable extends Migration
             $table->bigInteger('enable_private_question')->default(0);
             $table->bigInteger('coin')->default(0);
             $table->date('last_daily_sign_in')->default("20191029");
+            $table->string('last_ip')->default("0.0.0.0");
+            $table->dateTime('last_login_time')->default("2019-1-1 12:00:00");
             $table->rememberToken()->nullable();
             $table->timestamps();
             $table->softDeletes();
