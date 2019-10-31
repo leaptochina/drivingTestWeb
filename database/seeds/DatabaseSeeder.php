@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             QuestionList::class,
             Explains::class,
             MockHistoriesSeed::class,
+            ChargeQuestionSeed::class,
         ]);
     }
 }
