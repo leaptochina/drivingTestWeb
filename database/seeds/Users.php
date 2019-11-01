@@ -20,6 +20,7 @@ class Users extends Seeder
             'email' => 'pine@blueberrysolution.co.nz',   
             'user_identity' => '000',
             'has_ad' => '1',
+            'enable_private_question' => '1',
             'icon' => '/imgs/icon_circle.png',
         ]);
 
@@ -30,6 +31,7 @@ class Users extends Seeder
             'email' => 'supbut@qq.com',   
             'user_identity' => 'WlKyqMJL9qVYSiJktADIbCyCTHr2',
             'has_ad' => '1',
+            'enable_private_question' => '1',
             'icon' => 'https://graph.facebook.com/2365145390482407/picture',
         ]);
 
@@ -40,6 +42,7 @@ class Users extends Seeder
             'email' => 'pine.linhai@gmail.com',   
             'user_identity' => '0muS3c7j6mO5IzCDdNUNLMtWuxC3',
             'has_ad' => '1',
+            'enable_private_question' => '1',
             'icon' => 'https://lh3.googleusercontent.com/-0S1sgARY3FI/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3rfB-EH2FxF780x6qEs-EwlK1Qmhaw/s96-c/photo.jpg',
         ]);
 

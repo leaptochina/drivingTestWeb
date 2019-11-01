@@ -26,7 +26,12 @@ class Mock extends Controller
          $mock -> save();
 
         //创建驾考题目
-        $questions = DB::select('select * from `question_lists` order by rand() limit 35');
+        if ($existedUser -> enable_private_question == 1){ //VIP
+            $questions = DB::select('select * from `question_lists` order by rand() limit 35');
+        }else{
+            $questions = DB::select('select * from `question_lists` where `is_vip_only`=0 order by rand() limit 35');
+        }
+        
         $questionArray = array();
         foreach($questions as $question){
             array_push($questionArray, $question -> id);

@@ -9,9 +9,131 @@ use Illuminate\Support\Facades\DB;
 class Question extends Controller
 { 
 
+    
+
+
+    public function all()    {
+        $configs =  \App\Config::all();
+        $questionLists = \App\QuestionList::all();
+
+        $questionLists -> load('questions', 'explains');
+        
+
+
+        $r = [
+            'configs' => $configs,
+            'questionLists' => $questionLists,
+        ];
+
+        return $r;
+    }
+
+    public function showNew($question_list_id, $user_identity, $verify)    {
+        $serverVerify = md5($question_list_id . "pine" . $user_identity);
+        
+        if (strtolower($verify) != strtolower($serverVerify)){
+            return "Error";
+        }
+
+        $questionList =  \App\QuestionList::find($question_list_id);
+
+        if ($questionList -> is_vip_only == 1){
+            $existedUser =  \App\User::where('user_identity', $user_identity) -> first();
+    
+            if ($existedUser == null){
+                return "User not Exist";
+            }
+            if ($existedUser -> enable_private_question == 0){
+                return "User not OK";
+            }
+
+        }
+
+        $questionList -> load([
+            'questions', 
+            'explains' => function ($query) {
+                $query->orderBy('like', 'desc');
+            }
+        ]);
+
+        foreach($questionList -> explains as $explain){
+            $explain -> load('user');
+        }
+
+        return $questionList;
+    }
+
+    public function search(Request $request)    {
+        $search_word = $request -> search_word;
+        $user_identity = $request -> user_identity;
+        $verify = $request -> verify;
+        $language = $request -> language;
+
+        $serverVerify = md5($search_word . "pine" . $user_identity);
+        
+        if (strtolower($verify) != strtolower($serverVerify)){
+            return "Error";
+        }
+
+        $languageId = DB::table('languages') -> where ('flag', $language) -> first() -> id;
+
+        $questions = DB::table('questions')
+            -> where('language_id', $languageId)
+            -> where(function ($query) use ($search_word)  {
+                $query -> where('topic', 'like', "%" . $search_word . "%")
+                    -> orWhere('a', 'like', "%" . $search_word . "%")
+                    -> orWhere('b', 'like', "%" . $search_word . "%")
+                    -> orWhere('c', 'like', "%" . $search_word . "%")
+                    -> orWhere('d', 'like', "%" . $search_word . "%")
+                    -> orWhere('e', 'like', "%" . $search_word . "%");
+            }) -> get();
+        
+        
+        $r = [
+            'questions' => $questions,
+        ];                       
+
+        return $r;
+
+
+    }
+
+    
+
+
+    public function saveMyAnswer($question_list_id, $is_correct){
+
+        $questionList =  \App\QuestionList::find($question_list_id);
+        if ($questionList == null){
+            return;
+        }
+        $questionList -> accuracy_total += 1;
+        if (!$is_correct){
+            $questionList -> accuracy_err += 1;
+        }
+        
+
+        $questionList -> accuracy_err_rate = $questionList -> accuracy_err * 100 / $questionList -> accuracy_total;
+        $questionList -> save();
+
+
+        return $questionList;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
     //1.0.5（不含）以前弃用
     public function configNew($user_identity, $version_code, $language_code){
-        
+            
         $existedUser =  \App\User::where('user_identity', $user_identity) -> first();
 
         $allowErrorProne = 0;
@@ -101,8 +223,8 @@ class Question extends Controller
             ];
         }
 
-       
-       
+    
+    
 
         $r = [
             'orderExercise' => $ordersArray,
@@ -115,116 +237,6 @@ class Question extends Controller
         ];
         return $r;
     }
-    
-
-
-    public function all()    {
-        $configs =  \App\Config::all();
-        $questionLists = \App\QuestionList::all();
-
-        $questionLists -> load('questions', 'explains');
-        
-
-
-        $r = [
-            'configs' => $configs,
-            'questionLists' => $questionLists,
-        ];
-
-        return $r;
-    }
-
-    public function showNew($question_list_id, $user_identity, $verify)    {
-        $serverVerify = md5($question_list_id . "pine" . $user_identity);
-        
-        if (strtolower($verify) != strtolower($serverVerify)){
-            return "Error";
-        }
-
-        $questionList =  \App\QuestionList::find($question_list_id);
-
-        $questionList -> load([
-            'questions', 
-            'explains' => function ($query) {
-                $query->orderBy('like', 'desc');
-            }
-        ]);
-
-        foreach($questionList -> explains as $explain){
-            $explain -> load('user');
-        }
-
-        return $questionList;
-    }
-
-    public function search(Request $request)    {
-        $search_word = $request -> search_word;
-        $user_identity = $request -> user_identity;
-        $verify = $request -> verify;
-        $language = $request -> language;
-
-        $serverVerify = md5($search_word . "pine" . $user_identity);
-        
-        if (strtolower($verify) != strtolower($serverVerify)){
-            return "Error";
-        }
-
-        $languageId = DB::table('languages') -> where ('flag', $language) -> first() -> id;
-
-        $questions = DB::table('questions')
-            -> where('language_id', $languageId)
-            -> where(function ($query) use ($search_word)  {
-                $query -> where('topic', 'like', "%" . $search_word . "%")
-                    -> orWhere('a', 'like', "%" . $search_word . "%")
-                    -> orWhere('b', 'like', "%" . $search_word . "%")
-                    -> orWhere('c', 'like', "%" . $search_word . "%")
-                    -> orWhere('d', 'like', "%" . $search_word . "%")
-                    -> orWhere('e', 'like', "%" . $search_word . "%");
-            }) -> get();
-        
-        
-        $r = [
-            'questions' => $questions,
-        ];                       
-
-        return $r;
-
-
-    }
-
-    
-
-
-    public function saveMyAnswer($question_list_id, $is_correct){
-
-        $questionList =  \App\QuestionList::find($question_list_id);
-        if ($questionList == null){
-            return;
-        }
-        $questionList -> accuracy_total += 1;
-        if (!$is_correct){
-            $questionList -> accuracy_err += 1;
-        }
-        
-
-        $questionList -> accuracy_err_rate = $questionList -> accuracy_err * 100 / $questionList -> accuracy_total;
-        $questionList -> save();
-
-
-        return $questionList;
-    }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
