@@ -89,7 +89,7 @@ Route::get('/question_img/{filename}', function ($filename) {
 
 Route::get('/mi/show', 'Api\Migrate@show');
 Route::get('/mi/translate', 'Api\Migrate@translate');
-
+Route::get('/mi/translateNew', 'Api\Migrate@translateNew');
 
 
 
