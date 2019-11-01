@@ -37,7 +37,7 @@ Route::get('/c/signin/{user_identity}', 'Api\Coin@signin');
 Route::get('/c/enable_prone/{user_identity}', 'Api\Coin@enableProne');
 Route::get('/c/earn_coin/{user_identity}/{time}/{check_sum}', 'Api\Coin@earnCoin');
 Route::post('/c/purchase_coin/{user_identity}', 'Api\Coin@purchaseCoin');
-
+Route::get('/c/enable_expend/{user_identity}', 'Api\Coin@enableExpend');
 
 //用户相关
 Route::get('/u/{user_id}', 'Api\User@show');

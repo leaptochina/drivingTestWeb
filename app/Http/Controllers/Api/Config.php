@@ -27,7 +27,9 @@ class Config extends Controller
             $existedUser = $existedUser -> makeVisible('user_identity');
             $allowErrorProne = $existedUser -> enable_prone;
             $allowPrivateQuestions = $existedUser -> enable_private_question;
-
+            
+            $existedUser -> version_code = $version_code;
+            $existedUser -> language = $language_code;
             $existedUser -> last_ip = $this -> getRealIp();
             $existedUser -> last_login_time = date("Y-m-d H:i:s");
             $existedUser -> save();
@@ -64,7 +66,20 @@ class Config extends Controller
         foreach($mostError as $error){
             array_push($mostErrorArray, $error -> id);
         }
-        
+
+        //扩展题库
+        $extendQuestion = \App\QuestionList::where("is_vip_only", 1);
+
+        if (!$allowPrivateQuestions){
+            $extendQuestion = $extendQuestion -> limit(5);
+        }
+        $extendQuestion = $extendQuestion -> get(['id']);
+        $extendQuestionsArray = array();
+        foreach($extendQuestion as $error){
+            array_push($extendQuestionsArray, $error -> id);
+        }
+
+
         //易错题描述
         $prone_price = config('app.prone_price');
         if ($language_code == 'zh'){
@@ -87,6 +102,29 @@ class Config extends Controller
                 'prone_buy_people' => "* There are $usercount users tried this services",
             ];
         }
+
+        //扩展题库相关
+        $extend_price = config('app.extend_price');
+        if ($language_code == 'zh'){
+            $extendDescription = [
+                'enable'  => true,
+                'description1' => '扩展题库收集200+考试题库，内部资源，我们收集花费了大量的人力时间，希望您能支持我们',
+                'description2' => '我们正在加紧翻译题库，建议看英文版本',
+                'description3' => '开通本功能需要 999999 金币', //ps 本功能不定期打折，欢迎关注！',
+                'description4' => "今天免费开通（限时）！",
+                'buy_people' => "* 已经有 $usercount 人试用了此服务",
+            ];
+        }
+        else{
+            $extendDescription = [
+                'enable'  => true,
+                'description1' => 'This function contains 200+ questions',
+                'description2' => 'Please support us!',
+                'description3' => 'Super low price, only 999999 Coins',
+                'description4' => "Free use it for today!",
+                'buy_people' => "* There are $usercount users tried this services",
+            ];
+        }
         
         //系统通知
         if ($language_code == 'zh'){
@@ -99,14 +137,14 @@ class Config extends Controller
         //最新版本
         if ($language_code == 'zh'){
             $lastestVersion = [
-                'version_number' => 108,
+                'version_number' => 109,
                 'whatsnew' => '您必须更新才能使用',
                 'download_url' => '',
             ];
         }
         else{
             $lastestVersion = [
-                'version_number' => 108,
+                'version_number' => 109,
                 'whatsnew' => 'You must update app before use it!',
                 'download_url' => '',
             ];
@@ -156,9 +194,11 @@ class Config extends Controller
         $r = [
             'orderExercise' => $ordersArray,
             'languageList' => \App\Language::all(),
-            'mostError' => $mostErrorArray,
+            'mostError' => $mostErrorArray, 
+            'extendQuestions' => $extendQuestionsArray,
             'userInfo' => $existedUser,
             'proneDescription' => $proneDescription,
+            'extendDescription' => $extendDescription,
             'systemNotice' => $systemNotice,
             'lastestVersion' => $lastestVersion,
             'video_reward' => $video_reward, 
