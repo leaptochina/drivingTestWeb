@@ -36,17 +36,18 @@ class Question extends Controller
         }
 
         $questionList =  \App\QuestionList::find($question_list_id);
+        if ($question_list_id > 506){
+            if ($questionList -> is_vip_only == 1){
+                $existedUser =  \App\User::where('user_identity', $user_identity) -> first();
+        
+                if ($existedUser == null){
+                    return "User not Exist";
+                }
+                if ($existedUser -> enable_private_question == 0){
+                    return "User not OK";
+                }
 
-        if ($questionList -> is_vip_only == 1){
-            $existedUser =  \App\User::where('user_identity', $user_identity) -> first();
-    
-            if ($existedUser == null){
-                return "User not Exist";
             }
-            if ($existedUser -> enable_private_question == 0){
-                return "User not OK";
-            }
-
         }
 
         $questionList -> load([

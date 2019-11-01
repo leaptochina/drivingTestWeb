@@ -39,6 +39,39 @@ class Coin extends Controller
 
     }
 
+    public function enableExpend($user_identity){
+        $price = config('app.extend_price');
+
+
+        $user =  \App\User::where('user_identity', $user_identity) -> first();
+        
+        if ($user == null){
+            return "UserNotExist";
+        }
+
+        if ($user -> enable_private_question != 1){ //开启易错题
+            if ($user -> coin >= $price){ 
+                $user -> coin -= $price;
+                $user -> enable_private_question = 1;
+                $user -> save();
+                $code = 0;      //钱够 开通成功
+
+            }else{      
+                $code = 1;      //钱不够
+            }
+        }
+        else{
+            $code = 2;      //本功能已经开通
+        }
+
+        $r = [
+            'code' => $code,
+            'user' => $user
+        ];
+
+        return $r;
+
+    }
     public function enableProne($user_identity){
         $price = config('app.prone_price');
 
