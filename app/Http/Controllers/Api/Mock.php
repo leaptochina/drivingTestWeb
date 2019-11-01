@@ -25,12 +25,13 @@ class Mock extends Controller
          $mock -> start_time = new DateTime();
          $mock -> save();
 
-        //创建驾考题目
-        if ($existedUser -> enable_private_question == 1){ //VIP
-            $questions = DB::select('select * from `question_lists` order by rand() limit 35');
-        }else{
-            $questions = DB::select('select * from `question_lists` where `is_vip_only`=0 order by rand() limit 35');
-        }
+        //创建驾考题目 - 暂时不出现翻译不出来的题
+        // if ($existedUser -> enable_private_question == 1){ //VIP
+        //     $questions = DB::select('select * from `question_lists` order by rand() limit 35');
+        // }else{
+        //     $questions = DB::select('select * from `question_lists` where `is_vip_only`=0 order by rand() limit 35');
+        // }
+        $questions = DB::select('select * from `question_lists` where `is_vip_only`=0 order by rand() limit 35');
         
         $questionArray = array();
         foreach($questions as $question){
