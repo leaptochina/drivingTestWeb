@@ -81,6 +81,54 @@ class User extends Controller
         return $existedUser;
     }
 
+    public function uploadQuestion($user_identity, Request $request){
+        $existedUser =  \App\User::where('user_identity', $request -> user_identity) -> first();
+        
+        if ($existedUser == null){
+            return "UserNotExist";
+        }
+
+        //Log::info($request);
+
+        $question =  $request -> question;
+        $a =  $request -> a;
+        $b =  $request -> b;
+        $c =  $request -> c;
+        $d =  $request -> d;
+        $e =  $request -> e;
+        $messages =  $request -> messages;
+
+        $upload = new \App\UserUploadQuestion();
+        $upload -> user_id = $existedUser -> id;
+        $upload -> title = $question;
+        $upload -> a = $a;
+        $upload -> b = $b;
+        $upload -> c = $c;
+        $upload -> d = $d;
+        $upload -> e = $e;
+        $upload -> msg = $messages;
+        
+
+
+
+        $image = $request -> file('image');
+        if (isset($image)){
+            $fileName = strtotime("now") . '.' . $image -> getClientOriginalExtension();
+            $image -> move("../resources/user_upload/", $fileName);
+            $upload -> img = "/user_upload/" . $fileName;
+        }
+  
+        
+        $upload -> save();
+
+
+
+
+
+
+        return $upload;
+    }
+
     public function store(Request $request)
     {
         //$user_identity, $email, $phone, $icon, $name
