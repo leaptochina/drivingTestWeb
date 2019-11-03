@@ -44,6 +44,7 @@ Route::get('/u/{user_id}', 'Api\User@show');
 Route::post('/u/icon/{user_identity}', 'Api\User@uploadIcon');
 Route::patch('/u/nickname/{user_identity}', 'Api\User@updateNickname');
 Route::patch('/u/email/{user_identity}', 'Api\User@updateEmail');
+Route::post('/u/upload_question/{user_identity}', 'Api\User@uploadQuestion');
 
 //问题解释相关
 Route::patch('/e/', 'Api\Explain@update');

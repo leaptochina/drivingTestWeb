@@ -75,10 +75,11 @@ class Question extends Controller
         if (strtolower($verify) != strtolower($serverVerify)){
             return "Error";
         }
-
+        
         $languageId = DB::table('languages') -> where ('flag', $language) -> first() -> id;
 
-        $questions = DB::table('questions')
+        $questions = DB::table('questions');
+        $questions = $questions
             -> where('language_id', $languageId)
             -> where(function ($query) use ($search_word)  {
                 $query -> where('topic', 'like', "%" . $search_word . "%")
@@ -87,9 +88,17 @@ class Question extends Controller
                     -> orWhere('c', 'like', "%" . $search_word . "%")
                     -> orWhere('d', 'like', "%" . $search_word . "%")
                     -> orWhere('e', 'like', "%" . $search_word . "%");
-            }) -> get();
+            });
         
-        
+
+        $existedUser =  \App\User::where('user_identity', $user_identity) -> first();
+        if (($existedUser == null) || ($existedUser -> enable_private_question == 0)){
+            $ids = \App\QuestionList::where ('is_vip_only', 1) -> pluck('id') -> toArray();
+            $questions = $questions -> whereNotIn('question_list_id', $ids);
+        }
+
+
+        $questions = $questions -> get();
         $r = [
             'questions' => $questions,
         ];                       

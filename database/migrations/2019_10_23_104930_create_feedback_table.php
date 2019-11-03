@@ -22,6 +22,7 @@ class CreateFeedbackTable extends Migration
             $table->string('phone')->nullable();
             $table->bigInteger('is_read')->default(0);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
