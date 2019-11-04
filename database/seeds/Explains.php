@@ -2654,7 +2654,7 @@ class Explains extends Seeder
             'id' => '503', 
             'user_id' => '1', 
             'question_list_id' => '503', 
-            'explain_zh' => '您不应该在无人看管的情况下离此标志太近。',
+            'explain_zh' => '如果车里没人，不能在这里停车',
             'explain_en' => 'You should not leave your car unattended too close to this marking.', 
             'like' => '1',
             ]);
@@ -2663,7 +2663,7 @@ class Explains extends Seeder
             'id' => '504', 
             'user_id' => '1', 
             'question_list_id' => '504', 
-            'explain_zh' => '该交通信号用于加快公共交通。',
+            'explain_zh' => '这个信号能让公交车优先通过',
             'explain_en' => 'This traffic signal is used to expedite public transport.', 
             'like' => '1',
             ]);
@@ -2672,7 +2672,7 @@ class Explains extends Seeder
             'id' => '505', 
             'user_id' => '1', 
             'question_list_id' => '505', 
-            'explain_zh' => '这个标志告诉驾驶员他们可以走多快。',
+            'explain_zh' => '这个标志告诉司机他们最快可以走多快。',
             'explain_en' => 'This sign tells drivers how fast they may go.', 
             'like' => '1',
             ]);
@@ -2690,7 +2690,7 @@ class Explains extends Seeder
             'id' => '507', 
             'user_id' => '1', 
             'question_list_id' => '507', 
-            'explain_zh' => '该公园旨在为行动不便或进出车辆的人提供帮助。',
+            'explain_zh' => '车上必须有证才能停，否则罚款没商量',
             'explain_en' => 'This park is designed to assist those who may have difficulty with mobility or entering and exiting their vehicle.', 
             'like' => '1',
             ]);
@@ -2699,7 +2699,7 @@ class Explains extends Seeder
             'id' => '508', 
             'user_id' => '1', 
             'question_list_id' => '508', 
-            'explain_zh' => '道路的法律定义是广泛的，因此您应该相应地行驶。',
+            'explain_zh' => '选择范围最大的就对了',
             'explain_en' => 'The legal definition of a road is broad, so you should drive accordingly.', 
             'like' => '1',
             ]);
@@ -2708,7 +2708,7 @@ class Explains extends Seeder
             'id' => '509', 
             'user_id' => '1', 
             'question_list_id' => '509', 
-            'explain_zh' => '停车标志和让路标志不相等。',
+            'explain_zh' => '让路标志 比 停车标志 优先级高',
             'explain_en' => 'Stop signs and Give Way signs are not equal.', 
             'like' => '1',
             ]);
@@ -2717,7 +2717,7 @@ class Explains extends Seeder
             'id' => '510', 
             'user_id' => '1', 
             'question_list_id' => '510', 
-            'explain_zh' => '车辆只能在有限的时间内停在这里。',
+            'explain_zh' => '一般停在这里仅限于装卸货物',
             'explain_en' => 'Vehicles may park here for a limited time only.', 
             'like' => '1',
             ]);
@@ -2726,7 +2726,7 @@ class Explains extends Seeder
             'id' => '511', 
             'user_id' => '1', 
             'question_list_id' => '511', 
-            'explain_zh' => '胎面厚度为一毫米的轮胎应予以更换。',
+            'explain_zh' => '车检要求轮胎深度必须大于1.5mm。当胎面深度小于1mm的轮胎为保证安全，应予以更换。',
             'explain_en' => 'Tyres with one millimetre of tread should be replaced.', 
             'like' => '1',
             ]);
@@ -2735,7 +2735,7 @@ class Explains extends Seeder
             'id' => '512', 
             'user_id' => '1', 
             'question_list_id' => '512', 
-            'explain_zh' => '制定了让路规则，以消除有关谁可以先走新西兰道路的任何不确定性。',
+            'explain_zh' => '让行规则，死记硬背，主路直行 > 主路转弯 > 支路直行 > 支路小弯 > 支路大弯',
             'explain_en' => 'Give way rules are in place to remove any uncertainty over who may go first on New Zealand`s roads.', 
             'like' => '1',
             ]);
@@ -2744,7 +2744,7 @@ class Explains extends Seeder
             'id' => '513', 
             'user_id' => '1', 
             'question_list_id' => '513', 
-            'explain_zh' => '通常，迎面驶来的汽车会因为您的驾驶员睡着或分神而进入您的车道。',
+            'explain_zh' => '通常，迎面驶来的汽车会因为您的驾驶员睡着或分神而进入您的车道。按喇叭闪灯让对面车注意',
             'explain_en' => 'Often an oncoming car will enter your lane because its driver is asleep or distracted.', 
             'like' => '1',
             ]);
@@ -2753,7 +2753,7 @@ class Explains extends Seeder
             'id' => '514', 
             'user_id' => '1', 
             'question_list_id' => '514', 
-            'explain_zh' => '通常绿色意味着走。',
+            'explain_zh' => '如果还有一个绿色的右箭头，那么证明对面直行是红灯，您可以不用给直行车辆和行人让路',
             'explain_en' => 'Generally green means go.', 
             'like' => '1',
             ]);
@@ -2762,7 +2762,7 @@ class Explains extends Seeder
             'id' => '515', 
             'user_id' => '1', 
             'question_list_id' => '515', 
-            'explain_zh' => '人行横道使行人可以安全地过马路。驾驶员必须在这些区域注意。',
+            'explain_zh' => '你这样超车非常不安全，任何情况，您都需要在后面等着',
             'explain_en' => 'Pedestrian crossings allow pedestrians to safely cross the road. Drivers must take care in these areas.', 
             'like' => '1',
             ]);
@@ -2771,7 +2771,7 @@ class Explains extends Seeder
             'id' => '516', 
             'user_id' => '1', 
             'question_list_id' => '516', 
-            'explain_zh' => '安全带可以挽救生命。',
+            'explain_zh' => '不系安全带会被罚款，已满15周岁罚本人，不满15周岁罚司机',
             'explain_en' => 'Safety belts save lives.', 
             'like' => '1',
             ]);
@@ -2780,7 +2780,7 @@ class Explains extends Seeder
             'id' => '517', 
             'user_id' => '1', 
             'question_list_id' => '517', 
-            'explain_zh' => '您可以通过计算前方汽车与通过标记的汽车之间的间隔秒数来测量您的跟随距离。',
+            'explain_zh' => '正常跟车2秒规则，雨天是4秒规则，您可以计算与前车距离通过这些规则。',
             'explain_en' => 'You can measure your following distance by counting how may seconds pass between the car ahead and your car passing a marker.', 
             'like' => '1',
             ]);
@@ -2789,7 +2789,7 @@ class Explains extends Seeder
             'id' => '518', 
             'user_id' => '1', 
             'question_list_id' => '518', 
-            'explain_zh' => '您不得将车停在公交车站牌的前面。',
+            'explain_zh' => '不解释，记住了，你敢停，警察就敢罚',
             'explain_en' => 'You must not park in front of a bus stop sign.', 
             'like' => '1',
             ]);
@@ -2798,7 +2798,7 @@ class Explains extends Seeder
             'id' => '519', 
             'user_id' => '1', 
             'question_list_id' => '519', 
-            'explain_zh' => '驾驶员对年轻乘客的安全负责。',
+            'explain_zh' => '不系安全带会被罚款，已满15周岁罚本人，不满15周岁罚司机，驾驶员对年轻乘客的安全负责。',
             'explain_en' => 'The driver is responsible for the safety of younger passengers.', 
             'like' => '1',
             ]);
@@ -2807,7 +2807,7 @@ class Explains extends Seeder
             'id' => '520', 
             'user_id' => '1', 
             'question_list_id' => '520', 
-            'explain_zh' => '在无人看管之前，您应该确保自己的汽车安全。',
+            'explain_zh' => '在离开车之前，您应该确保自己的汽车安全。手动挡上坡驻车挂一档，下坡驻车挂倒档。如果题目没有指定上坡下坡，默认选1挡，手动挡车注意，点火前千万不要忘了放到空挡！',
             'explain_en' => 'You should ensure that your car is secure before you leave it unattended.', 
             'like' => '1',
             ]);
@@ -2816,7 +2816,7 @@ class Explains extends Seeder
             'id' => '521', 
             'user_id' => '1', 
             'question_list_id' => '521', 
-            'explain_zh' => '实施驾驶犯罪可能会导致罚款，法院判处罚款和累积记分。如果您累积了太多的记分，您的执照将被暂停。一旦您获得50分或以上的积分，您将收到一封警告信。',
+            'explain_zh' => '超速可能会导致罚款，法院判处罚款和累积记分。如果您累积了太多的记分，您的执照将被暂停。一旦您扣了超过50分（含），您将收到一封警告信。',
             'explain_en' => 'Committing a driving offense can result in a fine, a court imposed penalty, and the accumulation of demerit points. Your license will be suspended if you accumulate too many demerit points. You will receive a warning letter once you receive 50 or more points.', 
             'like' => '1',
             ]);
@@ -2825,7 +2825,7 @@ class Explains extends Seeder
             'id' => '522', 
             'user_id' => '1', 
             'question_list_id' => '522', 
-            'explain_zh' => '受限制的执照持有人可以自由运载乘客，但只能在主管的陪同下进行。',
+            'explain_zh' => '限制性驾照可以自由载客，但必须得到superviser的同意。',
             'explain_en' => 'A restricted licence holder can freely carry passengers, but only while accompanied by a supervisor.', 
             'like' => '1',
             ]);
@@ -2834,7 +2834,7 @@ class Explains extends Seeder
             'id' => '523', 
             'user_id' => '1', 
             'question_list_id' => '523', 
-            'explain_zh' => '您的危险灯使您的汽车对其他驾驶者更可见。他们不会让您无视道路规则。',
+            'explain_zh' => '双闪就是告诉其他车辆你可能已经抛锚，让你更容易被其他车辆注意到',
             'explain_en' => 'Your hazard lights make your car more visible to other motorists. They do not give you clearance to ignore the road rules.', 
             'like' => '1',
             ]);
@@ -2843,7 +2843,7 @@ class Explains extends Seeder
             'id' => '524', 
             'user_id' => '1', 
             'question_list_id' => '524', 
-            'explain_zh' => '您需要确保粘贴了健身保证（WoF）标签，并且您的汽车适合驾驶。警察确实有权检查和执行此操作。',
+            'explain_zh' => '您需要确保粘贴了健身保证（WoF）标签，并且您的汽车适合驾驶。警察很NB，啥时候想查就查。',
             'explain_en' => 'You are required to ensure that your Warrant of Fitness (WoF) label is attached and that your car is fit to drive. The police do have the power to check and enforce this.', 
             'like' => '1',
             ]);
@@ -2852,7 +2852,7 @@ class Explains extends Seeder
             'id' => '525', 
             'user_id' => '1', 
             'question_list_id' => '525', 
-            'explain_zh' => '行人和骑自行车的人比开汽车更容易受到伤害。小心驾驶。',
+            'explain_zh' => '自行车，摩托车，汽车，都是一个行车单位，规则当然也是一样的',
             'explain_en' => 'Pedestrians and cyclists are much more vulnerable than motorists. Drive with care.', 
             'like' => '1',
             ]);
@@ -2870,7 +2870,7 @@ class Explains extends Seeder
             'id' => '527', 
             'user_id' => '1', 
             'question_list_id' => '527', 
-            'explain_zh' => '您不应该在晚上将汽车停在路旁，否则其他驾驶员将不容易看到它。',
+            'explain_zh' => '某些汽车熄火后将转向灯打到右边，右侧示宽灯亮，这样晚上能让其他车辆看到你。然而，这种做法大约2天将耗尽电池的电。尽量不要晚上将汽车停在路旁，否则其他驾驶员将不容易看到它。',
             'explain_en' => 'You should not park your car by the road at night where it will not be easily visible to other motorists.', 
             'like' => '1',
             ]);
@@ -2879,7 +2879,7 @@ class Explains extends Seeder
             'id' => '528', 
             'user_id' => '1', 
             'question_list_id' => '528', 
-            'explain_zh' => '在某些情况下，您可以在公交专用道上短暂行驶。',
+            'explain_zh' => '在某些情况下，您可以在公交专用道上短暂行驶。但是注意，如果道路写了BUS ONLY 那么任何情况，您都不能占有这条车道',
             'explain_en' => 'You are permitted to briefly drive in a bus lane under certain circumstances.', 
             'like' => '1',
             ]);
@@ -2888,7 +2888,7 @@ class Explains extends Seeder
             'id' => '529', 
             'user_id' => '1', 
             'question_list_id' => '529', 
-            'explain_zh' => '面向停车标志的两辆汽车应遵循标准的让路规则。',
+            'explain_zh' => '老生常谈，让行规则，主路直行 > 主路转弯 > 支路直行 > 支路小弯 > 支路大弯',
             'explain_en' => 'Two cars facing Stop signs should follow the standard give way rules.', 
             'like' => '1',
             ]);
@@ -2897,7 +2897,7 @@ class Explains extends Seeder
             'id' => '530', 
             'user_id' => '1', 
             'question_list_id' => '530', 
-            'explain_zh' => '这个标志可以帮助驾驶者找到路。',
+            'explain_zh' => '一般修路时候能见到，告诉驾驶员应该从哪里走',
             'explain_en' => 'This sign may help motorists find their way.', 
             'like' => '1',
             ]);
@@ -2906,7 +2906,7 @@ class Explains extends Seeder
             'id' => '531', 
             'user_id' => '1', 
             'question_list_id' => '531', 
-            'explain_zh' => '您只应在安全且有足够安全空间的地方通过骑自行车的人。您应该设法与所骑行的自行车手保持最小距离。',
+            'explain_zh' => '死记硬背，数字题，您只应在安全且有足够安全空间的地方通过骑自行车的人。您应该设法与所骑行的自行车手保持最小距离。',
             'explain_en' => 'You should only pass a cyclist where it is safe and where there is enough room to proceed safely. There is a minimum distance you should try to maintain from any cyclist you are passing.', 
             'like' => '1',
             ]);
@@ -2915,7 +2915,7 @@ class Explains extends Seeder
             'id' => '532', 
             'user_id' => '1', 
             'question_list_id' => '532', 
-            'explain_zh' => '某些车辆在通过平交道口之前需要采取额外的预防措施。',
+            'explain_zh' => '某些车辆在通过T型道口之前，可能因为它过大，影响你的视线。',
             'explain_en' => 'Certain vehicles are required to take extra precautions before crossing a level crossing.', 
             'like' => '1',
             ]);
@@ -2924,7 +2924,7 @@ class Explains extends Seeder
             'id' => '533', 
             'user_id' => '1', 
             'question_list_id' => '533', 
-            'explain_zh' => '您的后雾灯会产生强烈的向后红光。',
+            'explain_zh' => '您的后雾灯会产生强烈的向后红光。后车驾驶员长时间看到这种灯光，会令人烦躁',
             'explain_en' => 'Your rear fog lights produce an intense rear facing red light.', 
             'like' => '1',
             ]);
@@ -2951,7 +2951,7 @@ class Explains extends Seeder
             'id' => '536', 
             'user_id' => '1', 
             'question_list_id' => '536', 
-            'explain_zh' => '血液酒精浓度应不超过50毫克。',
+            'explain_zh' => '20岁以下0容忍，20岁以上呼吸不超过250mcg，血液酒精浓度应不超过50毫克。',
             'explain_en' => 'The blood alcohol concentration should be no more than 50 mg.', 
             'like' => '1',
             ]);
@@ -2960,7 +2960,7 @@ class Explains extends Seeder
             'id' => '537', 
             'user_id' => '1', 
             'question_list_id' => '537', 
-            'explain_zh' => '切勿将车辆无人看管或放在蓝猫的眼睛标记附近。',
+            'explain_zh' => '车辆可以在消防栓处停车，但是车里必须有驾驶员。',
             'explain_en' => 'You must not leave a vehicle unattended on or too near a blue cat`s eye marker.', 
             'like' => '1',
             ]);
@@ -2969,7 +2969,7 @@ class Explains extends Seeder
             'id' => '538', 
             'user_id' => '1', 
             'question_list_id' => '538', 
-            'explain_zh' => '受限制的许可证持有人可以在某些小时内不受监管地驾驶。',
+            'explain_zh' => '死记硬背，限制性驾照晚上不能开车',
             'explain_en' => 'A restricted license holder can drive unsupervised between certain hours.', 
             'like' => '1',
             ]);
@@ -2987,7 +2987,7 @@ class Explains extends Seeder
             'id' => '540', 
             'user_id' => '1', 
             'question_list_id' => '540', 
-            'explain_zh' => '如果看不到行进路线，就无法开车。请当心，不要做任何会使情况更加危险的事情。',
+            'explain_zh' => '如果看不到行进路线，就无法开车。向左看可以减少眩光',
             'explain_en' => 'You cannot drive if you cannot see where you are going. Take care and don`t do anything that will make the situation any more dangerous.', 
             'like' => '1',
             ]);
@@ -3005,7 +3005,7 @@ class Explains extends Seeder
             'id' => '542', 
             'user_id' => '1', 
             'question_list_id' => '542', 
-            'explain_zh' => '警告三角形是任何人都可以放置的临时标志。',
+            'explain_zh' => '警告三角形，你车里就有，任何人车只要抛锚了，就需要在车后面放上这个，防止追尾。',
             'explain_en' => 'Warning triangles are temporary signs that can be placed by anyone.', 
             'like' => '1',
             ]);
@@ -3014,7 +3014,7 @@ class Explains extends Seeder
             'id' => '543', 
             'user_id' => '1', 
             'question_list_id' => '543', 
-            'explain_zh' => '如果您在高速公路上停车，可能会面临罚款以上的风险。',
+            'explain_zh' => '如果您在clearway上停车，可能会面临罚款的风险。',
             'explain_en' => 'You risk more than a fine if you park in a clearway.', 
             'like' => '1',
             ]);
@@ -3023,7 +3023,7 @@ class Explains extends Seeder
             'id' => '544', 
             'user_id' => '1', 
             'question_list_id' => '544', 
-            'explain_zh' => '您不得阻塞行人或交通流量。',
+            'explain_zh' => '您任何情况下都不能停在人行横道上，您不得阻塞行人或交通流量。',
             'explain_en' => 'You must not block the flow of pedestrians or traffic.', 
             'like' => '1',
             ]);
@@ -3032,7 +3032,7 @@ class Explains extends Seeder
             'id' => '545', 
             'user_id' => '1', 
             'question_list_id' => '545', 
-            'explain_zh' => '如有疑问，请让路。',
+            'explain_zh' => '如果标志不全，请给右侧让路。',
             'explain_en' => 'When in doubt, give way to your right.', 
             'like' => '1',
             ]);
@@ -3041,7 +3041,7 @@ class Explains extends Seeder
             'id' => '546', 
             'user_id' => '1', 
             'question_list_id' => '546', 
-            'explain_zh' => '更高级别的超速驾驶犯罪会自动吊销牌照。对于那些在具有永久（非临时）速度限制的区域超速行驶的人尤其如此。',
+            'explain_zh' => '更高的超速驾驶犯罪会自动吊销驾照。对于那些在具有永久（非临时）速度限制的区域超速行驶的人尤其如此。',
             'explain_en' => 'Higher range speeding offenses attract an automatic license suspension. This is especially true for those who are caught speeding in an area with a permanent (non-temporary) speed limit.', 
             'like' => '1',
             ]);
@@ -3050,7 +3050,7 @@ class Explains extends Seeder
             'id' => '547', 
             'user_id' => '1', 
             'question_list_id' => '547', 
-            'explain_zh' => '道路标志用于调节可能在哪里掉头。',
+            'explain_zh' => '记住吧。',
             'explain_en' => 'Road signs are used to regulate where U-turns may be performed.', 
             'like' => '1',
             ]);
@@ -3059,7 +3059,7 @@ class Explains extends Seeder
             'id' => '548', 
             'user_id' => '1', 
             'question_list_id' => '548', 
-            'explain_zh' => '这个标志告诉驾驶者他们可能在哪里开车。',
+            'explain_zh' => '这个标志可以让司机更容易找到道路在哪，不至于行驶到对向道路上去',
             'explain_en' => 'This signs tells motorists where they may drive.', 
             'like' => '1',
             ]);
@@ -3068,7 +3068,7 @@ class Explains extends Seeder
             'id' => '549', 
             'user_id' => '1', 
             'question_list_id' => '549', 
-            'explain_zh' => '您可能无法承受任何超出前排座椅前缘的负载。',
+            'explain_zh' => '小心，您的车可能无法承受任何超出前排座椅前缘的负载。',
             'explain_en' => 'You may not drive with any load that extends too far beyond the front edge of the front seat.', 
             'like' => '1',
             ]);
@@ -3077,7 +3077,7 @@ class Explains extends Seeder
             'id' => '550', 
             'user_id' => '1', 
             'question_list_id' => '550', 
-            'explain_zh' => '停权将有效地取消您的许可。',
+            'explain_zh' => '没驾照，不能开车，easy！',
             'explain_en' => 'A suspension will effectively cancel your licence.', 
             'like' => '1',
             ]);
@@ -3086,7 +3086,7 @@ class Explains extends Seeder
             'id' => '551', 
             'user_id' => '1', 
             'question_list_id' => '551', 
-            'explain_zh' => '停车标志可能放置在更繁忙和更危险的区域。',
+            'explain_zh' => '停车标志可能放置在繁忙和危险的区域。不论任何情况，您必须完全停止3秒，然后根据车况决定能否继续前进',
             'explain_en' => 'Stop signs may be placed in busier and more dangerous areas.', 
             'like' => '1',
             ]);
@@ -3104,7 +3104,7 @@ class Explains extends Seeder
             'id' => '553', 
             'user_id' => '1', 
             'question_list_id' => '553', 
-            'explain_zh' => '在山坡上停车时，应正确放置前轮。如果您的驻车制动器失效，这将阻止您的汽车滚动。',
+            'explain_zh' => '在山坡上停车时，应正确放置前轮。如果您的驻车制动器失效，您的车不至于滑到马路中央。',
             'explain_en' => 'You should position your front wheels correctly when you park on a hill. This will stop your car from rolling should your parking brake fail.', 
             'like' => '1',
             ]);
@@ -3113,7 +3113,7 @@ class Explains extends Seeder
             'id' => '554', 
             'user_id' => '1', 
             'question_list_id' => '554', 
-            'explain_zh' => '转弯车辆必须准备让路。',
+            'explain_zh' => '老生常谈，让行规则，主路直行 > 主路转弯 > 支路直行 > 支路小弯 > 支路大弯',
             'explain_en' => 'Turning vehicles must be prepared to give way.', 
             'like' => '1',
             ]);
@@ -3122,7 +3122,7 @@ class Explains extends Seeder
             'id' => '555', 
             'user_id' => '1', 
             'question_list_id' => '555', 
-            'explain_zh' => '道路工作区域可能对驾车者和道路工人的安全设有限制。',
+            'explain_zh' => '限速标志就是限速，任何时候，您必须按照标志执行。',
             'explain_en' => 'Road work areas may have restrictions in place for the safety of motorists and road workers.', 
             'like' => '1',
             ]);
@@ -3131,7 +3131,7 @@ class Explains extends Seeder
             'id' => '556', 
             'user_id' => '1', 
             'question_list_id' => '556', 
-            'explain_zh' => '在通过任何人之前，您必须考虑道路布局，条件以及您的信号是否会误导他人。',
+            'explain_zh' => '在任何的交通路口，道路有弯的地方，超车，变道都是不可以的。',
             'explain_en' => 'You must consider the road layout, conditions, and whether your signals would be misleading before you pass anyone.', 
             'like' => '1',
             ]);
@@ -3140,7 +3140,7 @@ class Explains extends Seeder
             'id' => '557', 
             'user_id' => '1', 
             'question_list_id' => '557', 
-            'explain_zh' => 'ABS代表防抱死制动系统。',
+            'explain_zh' => '紧急情况下，ABS可以保证车轮不抱死，达到最短的制动距离。高速情况下，使用手刹会让你甩尾，容易发生危险！',
             'explain_en' => 'ABS stands for Anti-Lock Braking System.', 
             'like' => '1',
             ]);
@@ -3149,7 +3149,7 @@ class Explains extends Seeder
             'id' => '558', 
             'user_id' => '1', 
             'question_list_id' => '558', 
-            'explain_zh' => '您应始终合法驾驶并遵守条件。',
+            'explain_zh' => '能考虑的都要考虑，这样才能更安全',
             'explain_en' => 'You should always drive lawfully and to the conditions.', 
             'like' => '1',
             ]);
@@ -3158,7 +3158,7 @@ class Explains extends Seeder
             'id' => '559', 
             'user_id' => '1', 
             'question_list_id' => '559', 
-            'explain_zh' => '每位乘客必须系上安全带或儿童约束装置。您不得驾驶车辆，否则会危害儿童。',
+            'explain_zh' => '每位乘客必须系上安全带或儿童约束装置。',
             'explain_en' => 'Every passenger must wear a safety belt or child restraint. You must not drive a vehicle if doing so will endanger a child.', 
             'like' => '1',
             ]);
@@ -3167,7 +3167,7 @@ class Explains extends Seeder
             'id' => '560', 
             'user_id' => '1', 
             'question_list_id' => '560', 
-            'explain_zh' => '该标志警告即将到来的弯道，并建议为该弯道设置速度。',
+            'explain_zh' => '该标志警告即将到来的弯道，并给出速度建议，防止车辆失控。',
             'explain_en' => 'This sign warns of an upcoming corner and recommends a speed for said corner.', 
             'like' => '1',
             ]);
@@ -3176,7 +3176,7 @@ class Explains extends Seeder
             'id' => '561', 
             'user_id' => '1', 
             'question_list_id' => '561', 
-            'explain_zh' => '幼儿必须坐在经批准的儿童约束装置中。',
+            'explain_zh' => '幼儿必须坐在经批准的儿童座椅中。',
             'explain_en' => 'Young children must be seated in an approved child restraint.', 
             'like' => '1',
             ]);
@@ -3185,7 +3185,7 @@ class Explains extends Seeder
             'id' => '562', 
             'user_id' => '1', 
             'question_list_id' => '562', 
-            'explain_zh' => '很难预测酒精会如何影响您。',
+            'explain_zh' => '很难预测酒精会如何影响您，所以不要酒后驾车',
             'explain_en' => 'It can be hard to predict how alcohol will affect you.', 
             'like' => '1',
             ]);
@@ -3203,7 +3203,7 @@ class Explains extends Seeder
             'id' => '564', 
             'user_id' => '1', 
             'question_list_id' => '564', 
-            'explain_zh' => '通常，迎面驶来的汽车会因为您的驾驶员睡着或分神而进入您的车道。因此，您应该计划一条逃生路线，以避免正面碰撞。请注意，近距离碰撞可能会在最后一刻唤醒即将到来的驾驶员。无论您在何处行驶，这都可能导致惊on的迎面而来的驾驶员突然转弯并重新进入正确的车道。',
+            'explain_zh' => '通常，迎面驶来的汽车会因为您的驾驶员睡着或分神而进入您的车道。因此，您应该计划一条躲避路线，以避免正面碰撞。请注意，遇到这种情况，需要使用喇叭和远光灯提醒对面的驾驶员！',
             'explain_en' => 'Often an oncoming car will enter your lane because its driver is asleep or distracted. You should therefore plan an escape route to avoid a head-on collision. Be aware that a near collision may wake up the oncoming driver at the last minute. This may cause the startled oncoming driver to swerve suddenly and re-enter their correct lane, regardless of where you are driving.', 
             'like' => '1',
             ]);
@@ -3212,7 +3212,7 @@ class Explains extends Seeder
             'id' => '565', 
             'user_id' => '1', 
             'question_list_id' => '565', 
-            'explain_zh' => '交通箭头控制着沿特定方向移动的交通流。无方向回合信号指示剩余的流量。',
+            'explain_zh' => '交通箭头控制着沿特定方向移动的交通流。',
             'explain_en' => 'Traffic arrows control the flow of traffic that is moving in a certain direction. Non-directional round signals direct the remaining traffic.', 
             'like' => '1',
             ]);
@@ -3221,7 +3221,7 @@ class Explains extends Seeder
             'id' => '566', 
             'user_id' => '1', 
             'question_list_id' => '566', 
-            'explain_zh' => '畅通无阻的道路限制了驾驶员可以停车。',
+            'explain_zh' => '这个是禁止短时间和长时间停车的标志。',
             'explain_en' => 'A clearway limits where motorists may park.', 
             'like' => '1',
             ]);
@@ -3230,7 +3230,7 @@ class Explains extends Seeder
             'id' => '567', 
             'user_id' => '1', 
             'question_list_id' => '567', 
-            'explain_zh' => '停车时，您必须在任何车辆入口旁边至少留一个小间隙。',
+            'explain_zh' => '停车时，您必须在任何车辆入口旁边至少留一个小间隙。这样别人家进车的时候也可以尽可能保证不刮到你的车',
             'explain_en' => 'You must leave at least a small clearance beside any vehicle entrance when you park.', 
             'like' => '1',
             ]);
@@ -3239,7 +3239,7 @@ class Explains extends Seeder
             'id' => '568', 
             'user_id' => '1', 
             'question_list_id' => '568', 
-            'explain_zh' => '限速标志说明区域的最大速度。',
+            'explain_zh' => '限速标志在你过限速标志的时候就生效了，意思是你必须以不大于50的速度过限速牌',
             'explain_en' => 'Speed limit signs illustrate an area`s maximum speed.', 
             'like' => '1',
             ]);
@@ -3248,7 +3248,7 @@ class Explains extends Seeder
             'id' => '569', 
             'user_id' => '1', 
             'question_list_id' => '569', 
-            'explain_zh' => '在开车提早发现危险的同时，您应该放眼未来。',
+            'explain_zh' => '你需要注意提前12秒的距离中所有可能发生的情况',
             'explain_en' => 'You should look well ahead while you drive to identify hazards early.', 
             'like' => '1',
             ]);
@@ -3257,7 +3257,7 @@ class Explains extends Seeder
             'id' => '570', 
             'user_id' => '1', 
             'question_list_id' => '570', 
-            'explain_zh' => '您的健身保证书（WoF）标签表明您的汽车在新西兰的道路上行驶是安全合法的。',
+            'explain_zh' => '2000年前的车半年一检，2000年后的车1年一检',
             'explain_en' => 'Your Warrant of Fitness (WoF) label demonstrates that your car is safe and lawful to drive on New Zealand`s roads.', 
             'like' => '1',
             ]);
@@ -3266,7 +3266,7 @@ class Explains extends Seeder
             'id' => '571', 
             'user_id' => '1', 
             'question_list_id' => '571', 
-            'explain_zh' => '此标志告诉驾驶者速度限制是多少。',
+            'explain_zh' => '限速标志，不解释',
             'explain_en' => 'This sign tells motorists what the speed limit is.', 
             'like' => '1',
             ]);
@@ -3275,7 +3275,7 @@ class Explains extends Seeder
             'id' => '572', 
             'user_id' => '1', 
             'question_list_id' => '572', 
-            'explain_zh' => '车辆在转弯之前或之后可能会使用齐平中位数。',
+            'explain_zh' => '中央隔离带是用来转弯待转的，并不是用来超车的',
             'explain_en' => 'Flush medians may be used by vehicles before and directly after they perform a turn.', 
             'like' => '1',
             ]);
@@ -3284,7 +3284,7 @@ class Explains extends Seeder
             'id' => '573', 
             'user_id' => '1', 
             'question_list_id' => '573', 
-            'explain_zh' => '您应尽可能避开电源线掉落的任何地方。',
+            'explain_zh' => '您应尽可能避开高压线掉落的任何地方。',
             'explain_en' => 'You should avoid any area with fallen power lines if at all possible.', 
             'like' => '1',
             ]);
@@ -3293,7 +3293,7 @@ class Explains extends Seeder
             'id' => '574', 
             'user_id' => '1', 
             'question_list_id' => '574', 
-            'explain_zh' => '您不得阻止流量。',
+            'explain_zh' => '您不得阻碍交通。',
             'explain_en' => 'You must not block the flow of traffic.', 
             'like' => '1',
             ]);
@@ -3302,7 +3302,7 @@ class Explains extends Seeder
             'id' => '575', 
             'user_id' => '1', 
             'question_list_id' => '575', 
-            'explain_zh' => '您的负载不得从车辆中心伸出太远。',
+            'explain_zh' => '车顶载物，注意不要刮到其他车辆',
             'explain_en' => 'Your load must not extend too far out from the centre of your vehicle.', 
             'like' => '1',
             ]);
@@ -3320,7 +3320,7 @@ class Explains extends Seeder
             'id' => '577', 
             'user_id' => '1', 
             'question_list_id' => '577', 
-            'explain_zh' => '手持手机可以使驾驶员的注意力远离道路。',
+            'explain_zh' => '使用手机将会影响您的判断力，除非紧急情况，不要使用手机',
             'explain_en' => 'Hand held cell phones can take a driver`s attention away from the road.', 
             'like' => '1',
             ]);
@@ -3329,7 +3329,7 @@ class Explains extends Seeder
             'id' => '578', 
             'user_id' => '1', 
             'question_list_id' => '578', 
-            'explain_zh' => '可能不需要您将车停下或停车。',
+            'explain_zh' => '遇到这种车辆，你不需要靠边停车或者让行',
             'explain_en' => 'You may not be required to pull over or stop for this vehicle.', 
             'like' => '1',
             ]);
@@ -3338,7 +3338,7 @@ class Explains extends Seeder
             'id' => '579', 
             'user_id' => '1', 
             'question_list_id' => '579', 
-            'explain_zh' => '通常在狭窄的单向路段附近会发现此标志。',
+            'explain_zh' => '通常在狭窄的单向路段附近会发现此标志。谁的标志粗谁先行。',
             'explain_en' => 'This sign will often be found near a narrow one-way section of road.', 
             'like' => '1',
             ]);
@@ -3347,7 +3347,7 @@ class Explains extends Seeder
             'id' => '580', 
             'user_id' => '1', 
             'question_list_id' => '580', 
-            'explain_zh' => '如果您的驻车制动器失效，您的齿轮将有助于阻止汽车滚动。如果您的汽车很重或山坡陡峭，请保持正确的档位很重要。',
+            'explain_zh' => '如果您的驻车制动器失效，您的齿轮将有助于阻止汽车溜车。如果您的汽车很重或山坡陡峭，请保持正确的档位很重要。',
             'explain_en' => 'Your gears will help stop your car from rolling should your parking brake fail. It is important to leave your car in the correct gear if your car is heavy or the hill is steep.', 
             'like' => '1',
             ]);
@@ -3356,7 +3356,7 @@ class Explains extends Seeder
             'id' => '581', 
             'user_id' => '1', 
             'question_list_id' => '581', 
-            'explain_zh' => '通过任何为乘客停下来的校车时，您必须以慢速行驶。',
+            'explain_zh' => '通过上下乘客停下来的校车时，您必须以慢速行驶。',
             'explain_en' => 'You must drive at a slow speed while you pass any school bus that has stopped for passengers.', 
             'like' => '1',
             ]);
@@ -3365,7 +3365,7 @@ class Explains extends Seeder
             'id' => '582', 
             'user_id' => '1', 
             'question_list_id' => '582', 
-            'explain_zh' => '黄灯用于清除红灯之前的路口。',
+            'explain_zh' => '黄灯也意味着停车，没想到吧！',
             'explain_en' => 'A yellow light is used to clear an intersection before a red light.', 
             'like' => '1',
             ]);
@@ -3374,7 +3374,7 @@ class Explains extends Seeder
             'id' => '583', 
             'user_id' => '1', 
             'question_list_id' => '583', 
-            'explain_zh' => '驾驶员应在进入回旋处之前和离开回旋处之前发出信号。',
+            'explain_zh' => '驾驶员应在进入环岛之前和离开环岛之前打转向信号。',
             'explain_en' => 'The driver should signal before entering and before leaving the roundabout.', 
             'like' => '1',
             ]);
@@ -3383,25 +3383,18 @@ class Explains extends Seeder
             'id' => '584', 
             'user_id' => '1', 
             'question_list_id' => '584', 
-            'explain_zh' => '您必须停车并停下来，以红色闪烁的车辆行驶。某些装有这些照明灯的车辆有权把您驶过，而其他车辆可能只需要快速通过。',
+            'explain_zh' => '您必须停车并停下来，让红色车辆优先行驶。某些装有这些照明灯的车辆有权让您靠边停车，而让其他车辆快速通过。',
             'explain_en' => 'You must pull over and stop for a vehicle with red flashing lights. Certain vehicles fitted with these lights have the right to pull you over while others may merely need to quickly pass.', 
             'like' => '1',
             ]);
             
-            DB::table('explains')->insert([ 
-            'id' => '585', 
-            'user_id' => '1', 
-            'question_list_id' => '585', 
-            'explain_zh' => '手机可以使驾驶员的注意力远离道路。',
-            'explain_en' => 'Cell phones can take a driver`s attention away from the road.', 
-            'like' => '1',
-            ]);
+            
             
             DB::table('explains')->insert([ 
             'id' => '586', 
             'user_id' => '1', 
             'question_list_id' => '586', 
-            'explain_zh' => '在引擎故障后，您应该尽快安全地离开道路。请记住正确地指出。',
+            'explain_zh' => '在引擎故障后，发动机已经失灵，请不要使用发动机制动，您应该尽快安全地离开道路。请记住正确地选项。',
             'explain_en' => 'You should aim to safely pull off the road as soon as possible after suffering an engine failure. Remember to indicate correctly.', 
             'like' => '1',
             ]);
@@ -3410,7 +3403,7 @@ class Explains extends Seeder
             'id' => '587', 
             'user_id' => '1', 
             'question_list_id' => '587', 
-            'explain_zh' => '在地震中开车可能很危险。在活动期间，道路可能会移动，折断，改变形状或被杂物乱扔。',
+            'explain_zh' => '在地震中开车可能很危险。在地震期间，道路可能会移动，折断，改变形状。',
             'explain_en' => 'Driving during an earthquake can be dangerous. The road may move, break, change shape, or be littered with debris during the event.', 
             'like' => '1',
             ]);
@@ -3419,7 +3412,7 @@ class Explains extends Seeder
             'id' => '588', 
             'user_id' => '1', 
             'question_list_id' => '588', 
-            'explain_zh' => '在进入回旋处执行转弯之前和退出回旋处之前，您应该发出信号。',
+            'explain_zh' => '在进入环岛执行转弯之前和退出环岛之前，您应该发出信号。',
             'explain_en' => 'You should signal before you enter a roundabout to perform a turn and before you exit a roundabout.', 
             'like' => '1',
             ]);
@@ -3428,7 +3421,7 @@ class Explains extends Seeder
             'id' => '589', 
             'user_id' => '1', 
             'question_list_id' => '589', 
-            'explain_zh' => '当您太靠近平交道口时，您不得通过另一辆车。',
+            'explain_zh' => '靠近火车路口，不能超车',
             'explain_en' => 'You must not pass another car when you are too close to a level crossing.', 
             'like' => '1',
             ]);
@@ -3446,7 +3439,7 @@ class Explains extends Seeder
             'id' => '591', 
             'user_id' => '1', 
             'question_list_id' => '591', 
-            'explain_zh' => '闪烁的灯光，障碍物和警钟用于警告驾车人士接近火车。',
+            'explain_zh' => '闪烁的灯光，障碍物和警钟用于警告驾驶员火车来了。',
             'explain_en' => 'Flashing lights, barriers, and warning bells are used to warn motorists of approaching trains.', 
             'like' => '1',
             ]);
@@ -3455,7 +3448,7 @@ class Explains extends Seeder
             'id' => '592', 
             'user_id' => '1', 
             'question_list_id' => '592', 
-            'explain_zh' => 'ABS代表防抱死制动系统。',
+            'explain_zh' => 'ABS代表防抱死制动系统，没有这个系统的车辆驾驶员一定要保证紧急制动时候轮胎不打滑',
             'explain_en' => 'ABS stands for Anti-Lock Braking System.', 
             'like' => '1',
             ]);
@@ -3464,7 +3457,7 @@ class Explains extends Seeder
             'id' => '593', 
             'user_id' => '1', 
             'question_list_id' => '593', 
-            'explain_zh' => '有时会使用黄色的闪烁灯来标记危险。',
+            'explain_zh' => '有时会使用黄色的闪烁灯来标记前方危险',
             'explain_en' => 'Yellow flashing lights are sometimes used to mark out hazards.', 
             'like' => '1',
             ]);
@@ -3473,7 +3466,7 @@ class Explains extends Seeder
             'id' => '594', 
             'user_id' => '1', 
             'question_list_id' => '594', 
-            'explain_zh' => '您不得阻止其他车辆驶过您。如果可行，您应该帮助其他驾驶员通过您。被赶超时，请不要执行任何不可预测的动作。',
+            'explain_zh' => '您不得阻止其他车辆驶过您。如果可行，您应该帮助其他驾驶员超过您。被超时，请不要执行任何不可预测的动作。',
             'explain_en' => 'You must not stop another car from passing you. You should help the other driver pass you if it is practical. Try not to perform any unpredictable actions while you are being overtaken.', 
             'like' => '1',
             ]);
@@ -3482,7 +3475,7 @@ class Explains extends Seeder
             'id' => '595', 
             'user_id' => '1', 
             'question_list_id' => '595', 
-            'explain_zh' => '有时候，您可能会在右转弯的海湾之前驶过对角条纹的道路区域。',
+            'explain_zh' => '如果可以，尽早进入隔离带可以减少对其他车辆的影响',
             'explain_en' => 'There are times when you may drive over a diagonally striped area of road before a right turn bay.', 
             'like' => '1',
             ]);
@@ -3500,7 +3493,7 @@ class Explains extends Seeder
             'id' => '597', 
             'user_id' => '1', 
             'question_list_id' => '597', 
-            'explain_zh' => '学校交叉口周围的交通可能由学校交叉口巡逻队控制。驾驶员必须在举起的手持式停车标志之前停车。',
+            'explain_zh' => '学校交叉口周围的交通可能由学校交叉口巡逻队（一般是学生志愿者）控制。驾驶员必须在这种停车标志之前停车。',
             'explain_en' => 'Traffic around school crossings may be controlled by a school crossing patrol. Drivers will have to stop before a raised handheld Stop sign.', 
             'like' => '1',
             ]);
@@ -3509,7 +3502,7 @@ class Explains extends Seeder
             'id' => '598', 
             'user_id' => '1', 
             'question_list_id' => '598', 
-            'explain_zh' => '此标志会影响驾车者可以停在哪里。',
+            'explain_zh' => '在这里停车会被拖车罚款！',
             'explain_en' => 'This sign affects where motorists may park.', 
             'like' => '1',
             ]);
@@ -3518,7 +3511,7 @@ class Explains extends Seeder
             'id' => '599', 
             'user_id' => '1', 
             'question_list_id' => '599', 
-            'explain_zh' => '通常会在道路上的弯道，拐角或弯道的警告标志上找到该标志。',
+            'explain_zh' => '这种是推荐时速标志，通常会在弯道，拐角找到该标志。',
             'explain_en' => 'This sign will often be found attached to a warning sign for a curve, corner, or bend in the road.', 
             'like' => '1',
             ]);
@@ -3527,7 +3520,7 @@ class Explains extends Seeder
             'id' => '600', 
             'user_id' => '1', 
             'question_list_id' => '600', 
-            'explain_zh' => '您必须减速至安全合法的速度，并小心通过。',
+            'explain_zh' => '校车正在上下儿童，那么社会车辆必须要以不超过20公里',
             'explain_en' => 'You must slow down to a safe and lawful speed and pass with care.', 
             'like' => '1',
             ]);
@@ -3536,7 +3529,7 @@ class Explains extends Seeder
             'id' => '601', 
             'user_id' => '1', 
             'question_list_id' => '601', 
-            'explain_zh' => '一些车道应预留给更快的车辆。',
+            'explain_zh' => '一般右侧车道是超车道',
             'explain_en' => 'Some lanes should be reserved for faster vehicles.', 
             'like' => '1',
             ]);
@@ -3545,7 +3538,7 @@ class Explains extends Seeder
             'id' => '602', 
             'user_id' => '1', 
             'question_list_id' => '602', 
-            'explain_zh' => '这是一个可以暂时停放的装载区。',
+            'explain_zh' => 'Loading Zone 可以接送乘客和装卸货物',
             'explain_en' => 'This is a loading zone where you may temporarily park.', 
             'like' => '1',
             ]);
@@ -3554,7 +3547,7 @@ class Explains extends Seeder
             'id' => '603', 
             'user_id' => '1', 
             'question_list_id' => '603', 
-            'explain_zh' => '主管驾驶员必须获得适当的驾驶执照，并具有所驾驶车辆类别的经验。',
+            'explain_zh' => 'Learner司机必须获得Supervisor的允许才能上路',
             'explain_en' => 'A supervisor driver must be appropriately licenced and experienced in the class of vehicle being driven.', 
             'like' => '1',
             ]);
@@ -3563,7 +3556,7 @@ class Explains extends Seeder
             'id' => '604', 
             'user_id' => '1', 
             'question_list_id' => '604', 
-            'explain_zh' => '您必须停车并停下来，以闪烁蓝灯的车辆行驶。这些车辆有权将您停下来检查您的车辆。',
+            'explain_zh' => '您必须停车并停下来，让烁蓝灯的车辆行驶。这些车辆有权让您停下来检查您的车辆。',
             'explain_en' => 'You must pull over and stop for a vehicle with blue flashing lights. These vehicles have the right to pull you over and inspect your vehicle.', 
             'like' => '1',
             ]);
@@ -3572,7 +3565,7 @@ class Explains extends Seeder
             'id' => '605', 
             'user_id' => '1', 
             'question_list_id' => '605', 
-            'explain_zh' => '看到此标志后，您应该放慢速度并准备让步。',
+            'explain_zh' => '看到此标志后，您应该放慢速度并准备让行。',
             'explain_en' => 'You should slow down and prepare to give way after you see this sign.', 
             'like' => '1',
             ]);
@@ -3581,7 +3574,7 @@ class Explains extends Seeder
             'id' => '606', 
             'user_id' => '1', 
             'question_list_id' => '606', 
-            'explain_zh' => '您的健身保证书（WoF）标签表明您的汽车在新西兰的道路上行驶是安全合法的。',
+            'explain_zh' => '您的 WoF 标签表明您的汽车在新西兰的道路上行驶是安全合法的。',
             'explain_en' => 'Your Warrant of Fitness (WoF) label demonstrates that your car is safe and lawful to drive on New Zealand`s roads.', 
             'like' => '1',
             ]);
@@ -3590,7 +3583,7 @@ class Explains extends Seeder
             'id' => '607', 
             'user_id' => '1', 
             'question_list_id' => '607', 
-            'explain_zh' => '过境车道的设计优先考虑了多人乘车。这是一条T3过境车道。',
+            'explain_zh' => '这条车道的设计优先考虑了多人乘车。这是一条T3车道。',
             'explain_en' => 'Transit lanes are designed to give priority to vehicles with multiple occupants. This is a T3 transit lane.', 
             'like' => '1',
             ]);
@@ -3599,7 +3592,7 @@ class Explains extends Seeder
             'id' => '608', 
             'user_id' => '1', 
             'question_list_id' => '608', 
-            'explain_zh' => '有一条让路规则适用于需要从车道进入道路的任何车辆。',
+            'explain_zh' => '有一条让路规则适用于需要从车道进入主路的任何车辆。',
             'explain_en' => 'There is a give way rule that applies to any vehicle that needs to enter the road from a driveway.', 
             'like' => '1',
             ]);
@@ -3608,7 +3601,7 @@ class Explains extends Seeder
             'id' => '609', 
             'user_id' => '1', 
             'question_list_id' => '609', 
-            'explain_zh' => '您可以将车停在这个标志的前面。',
+            'explain_zh' => '费用一般不在牌子上显示',
             'explain_en' => 'You may park in front of this sign.', 
             'like' => '1',
             ]);
@@ -3617,7 +3610,7 @@ class Explains extends Seeder
             'id' => '610', 
             'user_id' => '1', 
             'question_list_id' => '610', 
-            'explain_zh' => '您可以通过计算前方汽车与通过标记的汽车之间的间隔秒数来测量您的跟随距离。',
+            'explain_zh' => '晴朗天气2秒规则，恶略天气4买秒规则',
             'explain_en' => 'You can measure your following distance by counting how may seconds pass between the car ahead and your car passing a marker.', 
             'like' => '1',
             ]);
@@ -3626,7 +3619,7 @@ class Explains extends Seeder
             'id' => '611', 
             'user_id' => '1', 
             'question_list_id' => '611', 
-            'explain_zh' => '您必须确保所有儿童均得到正确且安全的保护。请注意安全气囊的位置，因为它们不适用于儿童安全装置。',
+            'explain_zh' => '您必须确保所有儿童均得到正确且安全的保护。请注意安全气囊的位置，因为它们会危害儿童安全。',
             'explain_en' => 'You must make sure any children are properly and safely secured. Be aware of the location of airbags as they are not designed to work with child safety devices.', 
             'like' => '1',
             ]);
@@ -3662,7 +3655,7 @@ class Explains extends Seeder
             'id' => '615', 
             'user_id' => '1', 
             'question_list_id' => '615', 
-            'explain_zh' => '您必须停车并停下来，以闪烁蓝灯和红灯的车辆行驶。这些车辆有权拉你过去。',
+            'explain_zh' => '您必须停车，让闪烁蓝灯和红灯的车辆行驶。这些车辆有权让你靠边停车。',
             'explain_en' => 'You must pull over and stop for a vehicle with blue and red flashing lights. These vehicles have the right to pull you over.', 
             'like' => '1',
             ]);
@@ -3671,7 +3664,7 @@ class Explains extends Seeder
             'id' => '616', 
             'user_id' => '1', 
             'question_list_id' => '616', 
-            'explain_zh' => '在T型交叉路口的公路上行驶的车辆优先。',
+            'explain_zh' => '老生常谈，让行规则，主路先行',
             'explain_en' => 'Vehicles on the through-road of a T-intersection have priority.', 
             'like' => '1',
             ]);
@@ -3680,7 +3673,7 @@ class Explains extends Seeder
             'id' => '617', 
             'user_id' => '1', 
             'question_list_id' => '617', 
-            'explain_zh' => '冒烟的车辆有害于公共健康，环境和道路安全。因此，在您的车辆被认为不适合使用之前，可能会散发出多少烟雾。',
+            'explain_zh' => '冒烟的车辆有害于公共健康，环境和道路安全。',
             'explain_en' => 'Vehicles that emit smoke are harmful to public health, the environment, and road safety. Therefore, there are limits as to how much smoke your vehicle may emit before it is deemed unfit for use.', 
             'like' => '1',
             ]);
@@ -3698,7 +3691,7 @@ class Explains extends Seeder
             'id' => '619', 
             'user_id' => '1', 
             'question_list_id' => '619', 
-            'explain_zh' => '当您接近“让路”标志时，您应该准备好遇到交通问题。',
+            'explain_zh' => '当您接近“Give Way”标志时，您应该准备停车准备。',
             'explain_en' => 'You should prepare to encounter traffic as you approach a Give Way sign.', 
             'like' => '1',
             ]);
@@ -3716,7 +3709,7 @@ class Explains extends Seeder
             'id' => '621', 
             'user_id' => '1', 
             'question_list_id' => '621', 
-            'explain_zh' => '在某些情况下，您只能在左侧经过。',
+            'explain_zh' => '在某些情况下，您只能在左侧超过',
             'explain_en' => 'You can only pass on the left under certain conditions.', 
             'like' => '1',
             ]);
@@ -3752,7 +3745,7 @@ class Explains extends Seeder
             'id' => '625', 
             'user_id' => '1', 
             'question_list_id' => '625', 
-            'explain_zh' => '您必须指出足够长的时间，以将您的意图传达给其他道路使用者。您必须指定一个合法设置的最小秒数。',
+            'explain_zh' => '您必须打转向够长的时间，以将您的意图传达给其他驾驶员。',
             'explain_en' => 'You must indicate for long enough to communicate your intentions to other road users. There is a legally set minimum number of seconds for which you must indicate.', 
             'like' => '1',
             ]);
@@ -3779,7 +3772,7 @@ class Explains extends Seeder
             'id' => '628', 
             'user_id' => '1', 
             'question_list_id' => '628', 
-            'explain_zh' => '您的号角可以帮助您警告其他道路使用者有危险或危险情况。',
+            'explain_zh' => '您的鸣笛可以帮助您警告其他道路使用者有危险或危险情况。',
             'explain_en' => 'Your horn can help you alert other road users of a hazard or dangerous situation.', 
             'like' => '1',
             ]);
@@ -3788,7 +3781,7 @@ class Explains extends Seeder
             'id' => '629', 
             'user_id' => '1', 
             'question_list_id' => '629', 
-            'explain_zh' => '自行车道是专门用于自行车的道路区域。',
+            'explain_zh' => '自行车是一个行车单位，拥有与汽车相同的让行规则。',
             'explain_en' => 'Cycle lanes are areas of road specially designated for bicycles.', 
             'like' => '1',
             ]);
@@ -3797,7 +3790,7 @@ class Explains extends Seeder
             'id' => '630', 
             'user_id' => '1', 
             'question_list_id' => '630', 
-            'explain_zh' => '此标志告诉您何时可以在巴士站前停车。',
+            'explain_zh' => '公交车站不能停车',
             'explain_en' => 'This sign tells you when you may park in front of a bus stop.', 
             'like' => '1',
             ]);
@@ -3815,7 +3808,7 @@ class Explains extends Seeder
             'id' => '632', 
             'user_id' => '1', 
             'question_list_id' => '632', 
-            'explain_zh' => '黄灯用于清除红灯之前的路口。',
+            'explain_zh' => '黄灯是如果可以安全停下 就停下',
             'explain_en' => 'A yellow light is used to clear an intersection before a red light.', 
             'like' => '1',
             ]);
@@ -3824,7 +3817,7 @@ class Explains extends Seeder
             'id' => '633', 
             'user_id' => '1', 
             'question_list_id' => '633', 
-            'explain_zh' => '这是行人横穿的地方，但不是典型的人行横道。',
+            'explain_zh' => '这是行人横穿的地方，礼让路口，但不是典型的人行横道。',
             'explain_en' => 'This is a place where pedestrians may cross, but it is not a typical pedestrian crossing.', 
             'like' => '1',
             ]);
@@ -3851,7 +3844,7 @@ class Explains extends Seeder
             'id' => '636', 
             'user_id' => '1', 
             'question_list_id' => '636', 
-            'explain_zh' => '您应该尝试在汽车周围保持安全垫。尽量避免跟进和跟进太近。',
+            'explain_zh' => '您应该尝试在汽车周围保持安全距离。尽量避免跟车太近。',
             'explain_en' => 'You should try to maintain a safety cushion around your car. Try to avoid following and being followed too closely.', 
             'like' => '1',
             ]);
@@ -3860,7 +3853,7 @@ class Explains extends Seeder
             'id' => '637', 
             'user_id' => '1', 
             'question_list_id' => '637', 
-            'explain_zh' => '保留了右侧车道，以加快交通速度。仅在必要时使用正确的车道。',
+            'explain_zh' => '留空右侧车道，以加快交通速度。仅在必要时使用正确的车道。',
             'explain_en' => 'The right lane is reserved for faster moving traffic. Only use the right lane when you must.', 
             'like' => '1',
             ]);
@@ -3878,7 +3871,7 @@ class Explains extends Seeder
             'id' => '639', 
             'user_id' => '1', 
             'question_list_id' => '639', 
-            'explain_zh' => '自行车道是专门用于自行车的道路区域，但是人行道的用途是什么？',
+            'explain_zh' => '汽车要给自行车和行人让行',
             'explain_en' => 'Cycle lanes are areas of road specially designated for bicycles, but what are footpaths for?', 
             'like' => '1',
             ]);
@@ -3887,7 +3880,7 @@ class Explains extends Seeder
             'id' => '640', 
             'user_id' => '1', 
             'question_list_id' => '640', 
-            'explain_zh' => '切勿让无人看管的汽车挡住消防栓。',
+            'explain_zh' => '切勿让没有驾驶员的汽车挡住消防栓。',
             'explain_en' => 'You must not leave an unattended car blocking a fire hydrant.', 
             'like' => '1',
             ]);
@@ -3896,7 +3889,7 @@ class Explains extends Seeder
             'id' => '641', 
             'user_id' => '1', 
             'question_list_id' => '641', 
-            'explain_zh' => '如果您的记分过多，您的许可证将被暂停数月。',
+            'explain_zh' => '如果您的记分过多，您的驾照将被暂停数月。',
             'explain_en' => 'Your licence will be suspended for a number of months if you accrue too many demerit points.', 
             'like' => '1',
             ]);
@@ -3905,7 +3898,7 @@ class Explains extends Seeder
             'id' => '642', 
             'user_id' => '1', 
             'question_list_id' => '642', 
-            'explain_zh' => '交通箭头控制着沿特定方向移动的交通流。无方向回合信号指示剩余的流量。',
+            'explain_zh' => '交通箭头控制着沿特定方向移动的交通流。圆形信号指示剩余的车辆。',
             'explain_en' => 'Traffic arrows control the flow of traffic that is moving in a certain direction. Non-directional round signals direct the remaining traffic.', 
             'like' => '1',
             ]);
@@ -3914,7 +3907,7 @@ class Explains extends Seeder
             'id' => '643', 
             'user_id' => '1', 
             'question_list_id' => '643', 
-            'explain_zh' => '您必须遵守酒精测试。',
+            'explain_zh' => '一般酒精测试后会有毒品测试！',
             'explain_en' => 'You must comply with an alcohol test.', 
             'like' => '1',
             ]);
@@ -3950,7 +3943,7 @@ class Explains extends Seeder
             'id' => '647', 
             'user_id' => '1', 
             'question_list_id' => '647', 
-            'explain_zh' => '提防驶来的车辆以及行人过马路时停在齐平的中间位置的行人。',
+            'explain_zh' => '提前进入缓冲区，不要阻挡后面的车辆。',
             'explain_en' => 'Watch out for oncoming vehicles and for pedestrians who have stopped on a flush median while crossing the road.', 
             'like' => '1',
             ]);
@@ -3959,7 +3952,7 @@ class Explains extends Seeder
             'id' => '648', 
             'user_id' => '1', 
             'question_list_id' => '648', 
-            'explain_zh' => '每当天黑或能见度不佳时，都应使用大灯。从法律上讲，您必须在日落前后打开大灯并保持打开状态直到日光。',
+            'explain_zh' => '每当天黑或能见度不佳时，都应使用大灯。从法律上讲，您必须在日落前后打开大灯并保持打开状态。如果路灯已经亮了，您没有打开大灯，那么就要被罚款呢了',
             'explain_en' => 'Your headlights should be used whenever it is dark or visibility is poor. Legally, you are required to switch on your headlights around sunset and keep them on until daylight.', 
             'like' => '1',
             ]);
@@ -3977,7 +3970,7 @@ class Explains extends Seeder
             'id' => '650', 
             'user_id' => '1', 
             'question_list_id' => '650', 
-            'explain_zh' => '人行横道被高架交通岛分开：这意味着行人更加安全。',
+            'explain_zh' => '人行横道被交通岛分开，行人更加安全。',
             'explain_en' => 'This pedestrian crossing is split by a raised traffic island: it means more safety for pedestrians.', 
             'like' => '1',
             ]);
@@ -4139,7 +4132,7 @@ class Explains extends Seeder
             'id' => '668', 
             'user_id' => '1', 
             'question_list_id' => '668', 
-            'explain_zh' => '汽车在回旋处左转。',
+            'explain_zh' => '汽车在环岛左转。',
             'explain_en' => 'The car is turning left at a roundabout.', 
             'like' => '1',
             ]);
