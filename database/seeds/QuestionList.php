@@ -3013,13 +3013,7 @@ class QuestionList extends Seeder
             'accuracy_err_rate' => '10.000000' 
             ]);
             
-            DB::table('question_lists')->insert([ 
-            'id' => '585', 
-            'accuracy_total' => '10', 
-            'accuracy_err' => '1', 
-            'is_vip_only' => '1', 
-            'accuracy_err_rate' => '10.000000' 
-            ]);
+            
             
             DB::table('question_lists')->insert([ 
             'id' => '586', 

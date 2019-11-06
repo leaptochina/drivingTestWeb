@@ -108,8 +108,8 @@ class Config extends Controller
         if ($language_code == 'zh'){
             $extendDescription = [
                 'enable'  => true,
-                'description1' => '扩展题库收集200+考试题库，内部资源，我们收集花费了大量的人力时间，希望您能支持我们',
-                'description2' => '我们正在加紧翻译题库，建议看英文版本',
+                'description1' => '扩展题库收集200+考试题库，内部资源，我们收集花费了大量的人力时间整理，希望您能支持我们',
+                'description2' => '统计显示99%的考生在考试中遇到了没有练习过的题目',
                 'description3' => '开通本功能需要 999999 金币', //ps 本功能不定期打折，欢迎关注！',
                 'description4' => "今天免费开通（限时）！",
                 'buy_people' => "* 已经有 $usercount 人试用了此服务",
