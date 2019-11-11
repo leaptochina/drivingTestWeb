@@ -137,14 +137,14 @@ class Config extends Controller
         //最新版本
         if ($language_code == 'zh'){
             $lastestVersion = [
-                'version_number' => 109,
+                'version_number' => 114,
                 'whatsnew' => '您必须更新才能使用',
                 'download_url' => '',
             ];
         }
         else{
             $lastestVersion = [
-                'version_number' => 109,
+                'version_number' => 114,
                 'whatsnew' => 'You must update app before use it!',
                 'download_url' => '',
             ];
@@ -189,7 +189,22 @@ class Config extends Controller
             ];
         }
         
-            
+        //记录有APP打开
+        $ip = $this -> getRealIp();
+        $ipHistory = \App\IpHistory::where('last_ip', $ip) -> first();
+        if ($ipHistory == null){
+            $ipHistory = new \App\IpHistory();
+            $ipHistory -> last_ip =  $ip;
+        }
+        if ($existedUser != null){
+            $ipHistory -> user_id =  $existedUser -> id;
+        }
+        $ipHistory -> last_login_time =   date("Y-m-d H:i:s");
+        $ipHistory -> save();
+        
+
+
+
 
         $r = [
             'orderExercise' => $ordersArray,
@@ -237,4 +252,6 @@ class Config extends Controller
         }
         return ($ip ? $ip : $_SERVER['REMOTE_ADDR']);
     }
+
+    
 }
